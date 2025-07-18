@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Vardhaman Agencies | Review Your Order</title>
+    <meta name="description" content="Review your bubble wrap packaging order. Secure checkout with multiple payment options available.">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Navbar will be loaded here -->
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="cart-hero">
+            <div class="container">
+                <div class="cart-hero__content">
+                    <h1 class="cart-hero__title">Shopping Cart</h1>
+                    <p class="cart-hero__subtitle">Review your items before proceeding to checkout</p>
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="breadcrumb__separator">/</span>
+                        <a href="products.html">Products</a>
+                        <span class="breadcrumb__separator">/</span>
+                        <span class="breadcrumb__current">Cart</span>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Content -->
+        <section class="cart-section">
+            <div class="container">
+                <div class="cart-wrapper">
+                    <!-- Cart Items -->
+                    <div class="cart-main">
+                        <div class="cart-header">
+                            <h2 class="cart-title">Your Items</h2>
+                            <button class="cart-clear" id="clear-cart">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                                </svg>
+                                Clear Cart
+                            </button>
+                        </div>
+                        
+                        <!-- Empty Cart State -->
+                        <div class="empty-cart" id="empty-cart">
+                            <div class="empty-cart__icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="empty-cart__title">Your cart is empty</h3>
+                            <p class="empty-cart__description">Add some products to your cart to get started</p>
+                            <a href="products.html" class="btn btn--primary">Shop Products</a>
+                        </div>
+                        
+                        <!-- Cart Items List -->
+                        <div class="cart-items" id="cart-items">
+                            <!-- Cart items will be dynamically loaded here -->
+                        </div>
+                        
+                        <!-- Cart Actions -->
+                        <div class="cart-actions" id="cart-actions">
+                            <a href="products.html" class="btn btn--outline">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 7l-3-3-7 7-7-7-3 3 7 7 3-3z"/>
+                                </svg>
+                                Continue Shopping
+                            </a>
+                            <button class="btn btn--secondary" id="update-cart">Update Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Summary -->
+                    <div class="cart-sidebar">
+                        <div class="cart-summary">
+                            <h3 class="summary-title">Order Summary</h3>
+                            
+                            <div class="summary-row">
+                                <span class="summary-label">Subtotal</span>
+                                <span class="summary-value" id="cart-subtotal">₹0</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span class="summary-label">Shipping</span>
+                                <span class="summary-value" id="cart-shipping">Free</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span class="summary-label">Tax (18% GST)</span>
+                                <span class="summary-value" id="cart-tax">₹0</span>
+                            </div>
+                            
+                            <div class="summary-divider"></div>
+                            
+                            <div class="summary-row summary-total">
+                                <span class="summary-label">Total</span>
+                                <span class="summary-value" id="cart-total">₹0</span>
+                            </div>
+                            
+                            <div class="summary-actions">
+                                <button class="btn btn--primary btn-full" id="proceed-checkout">
+                                    Proceed to Checkout
+                                </button>
+                                <button class="btn btn--outline btn-full" id="get-quote">
+                                    Get Custom Quote
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Promo Code -->
+                        <div class="promo-code">
+                            <h4 class="promo-title">Have a promo code?</h4>
+                            <div class="promo-form">
+                                <input type="text" class="promo-input" placeholder="Enter promo code" id="promo-code">
+                                <button class="btn btn--secondary" id="apply-promo">Apply</button>
+                            </div>
+                            <div class="promo-message" id="promo-message"></div>
+                        </div>
+                        
+                        <!-- Shipping Info -->
+                        <div class="shipping-info">
+                            <h4 class="shipping-title">Shipping Information</h4>
+                            <div class="shipping-details">
+                                <div class="shipping-option">
+                                    <div class="shipping-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="shipping-text">
+                                        <h5>Free Shipping</h5>
+                                        <p>On orders above ₹2,000</p>
+                                    </div>
+                                </div>
+                                <div class="shipping-option">
+                                    <div class="shipping-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="shipping-text">
+                                        <h5>Secure Packaging</h5>
+                                        <p>Safe delivery guaranteed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Help Section -->
+                        <div class="cart-help">
+                            <h4 class="help-title">Need Help?</h4>
+                            <div class="help-links">
+                                <a href="contact.html" class="help-link">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                    Contact Support
+                                </a>
+                                <a href="tel:+91-123-456-7890" class="help-link">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                    </svg>
+                                    Call Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Products -->
+        <section class="recommended-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">You Might Also Like</h2>
+                    <p class="section-description">Complete your order with these popular products</p>
+                </div>
+                <div class="recommended-grid">
+                    <div class="recommended-item" data-product="small-bubble-rolls">
+                        <div class="recommended-image">
+                            <div class="product-placeholder">Small Bubble</div>
+                        </div>
+                        <h4 class="recommended-title">Small Bubble Wrap Rolls</h4>
+                        <p class="recommended-price">From ₹850</p>
+                        <button class="btn btn--outline btn-sm add-recommended">Add to Cart</button>
+                    </div>
+                    <div class="recommended-item" data-product="anti-static-bags">
+                        <div class="recommended-image">
+                            <div class="product-placeholder">Anti-Static</div>
+                        </div>
+                        <h4 class="recommended-title">Anti-Static Bags</h4>
+                        <p class="recommended-price">From ₹750</p>
+                        <button class="btn btn--outline btn-sm add-recommended">Add to Cart</button>
+                    </div>
+                    <div class="recommended-item" data-product="packaging-tape">
+                        <div class="recommended-image">
+                            <div class="product-placeholder">Packaging Tape</div>
+                        </div>
+                        <h4 class="recommended-title">Packaging Tape</h4>
+                        <p class="recommended-price">From ₹350</p>
+                        <button class="btn btn--outline btn-sm add-recommended">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Footer will be loaded here -->
+    </footer>
+
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

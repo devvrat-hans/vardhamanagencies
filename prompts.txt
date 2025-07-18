@@ -1,0 +1,1 @@
+now create the cart page for the website. the files you can edit adn modify should include, cart.js, cart.css, cart.html and include the navbar adn footer within the page using the templates.js.
