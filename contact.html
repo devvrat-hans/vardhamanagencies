@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/cta.css">
     <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 <body>
@@ -138,6 +139,16 @@
                                         <option value="other">Other</option>
                                     </select>
                                     <span class="form-error" id="inquiryType-error"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="productInterest" class="form-label">Product of Interest</label>
+                                    <select id="productInterest" name="productInterest" class="form-input">
+                                        <option value="">Select product (optional)</option>
+                                        <option value="bubble-wrap">Bubble Wrap</option>
+                                        <option value="stretch-films">Stretch Films</option>
+                                        <option value="both">Both Products</option>
+                                    </select>
                                 </div>
                             </div>
                             
@@ -290,6 +301,9 @@
                 </div>
             </div>
         </section>
+
+        <!-- CTA Section -->
+        <div id="cta-placeholder"></div>
     </main>
 
     <!-- Footer -->
@@ -300,6 +314,7 @@
     <script src="assets/js/templates.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/footer.js"></script>
+    <script src="assets/js/cta.js"></script>
     <script src="assets/js/contact.js"></script>
 </body>
 </html>

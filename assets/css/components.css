@@ -1,11 +1,13 @@
 /* Global Styles and Components */
 :root {
-    /* Colors - Subtle and Professional */
-    --primary-color: #2c5aa0;
-    --primary-light: #4a7bc8;
-    --primary-dark: #1e3f73;
-    --secondary-color: #f8f9fa;
-    --accent-color: #ff6b35;
+    /* Theme Colors - #004BB8 and #EC0002 */
+    --primary-color: #004BB8;
+    --primary-light: #1a5cc8;
+    --primary-dark: #003a91;
+    --secondary-color: #EC0002;
+    --secondary-light: #ff1a1a;
+    --secondary-dark: #cc0002;
+    --accent-color: #004BB8;
     
     /* Neutral Colors */
     --text-primary: #2d3748;
@@ -44,6 +46,42 @@
     --transition-fast: 0.15s ease;
     --transition-base: 0.2s ease;
     --transition-slow: 0.3s ease;
+
+    /* Color CSS Custom Properties for easier usage */
+    --color-primary-50: #e6f0ff;
+    --color-primary-100: #b3d1ff;
+    --color-primary-200: #80b2ff;
+    --color-primary-300: #4d93ff;
+    --color-primary-400: #1a74ff;
+    --color-primary-500: #004BB8;
+    --color-primary-600: #003f9f;
+    --color-primary-700: #003386;
+    --color-primary-800: #00276d;
+    --color-primary-900: #001b54;
+
+    --color-secondary-50: #ffeaea;
+    --color-secondary-100: #ffb3b3;
+    --color-secondary-200: #ff8080;
+    --color-secondary-300: #ff4d4d;
+    --color-secondary-400: #ff1a1a;
+    --color-secondary-500: #EC0002;
+    --color-secondary-600: #d90002;
+    --color-secondary-700: #b30001;
+    --color-secondary-800: #990001;
+    --color-secondary-900: #660001;
+
+    --color-neutral-50: #f8fafc;
+    --color-neutral-100: #f1f5f9;
+    --color-neutral-200: #e2e8f0;
+    --color-neutral-300: #cbd5e1;
+    --color-neutral-400: #94a3b8;
+    --color-neutral-500: #64748b;
+    --color-neutral-600: #475569;
+    --color-neutral-700: #334155;
+    --color-neutral-800: #1e293b;
+    --color-neutral-900: #0f172a;
+
+    --color-green-600: #059669;
 }
 
 /* Reset and Base Styles */
@@ -151,13 +189,14 @@ a:hover {
 }
 
 .btn--secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
 }
 
 .btn--secondary:hover {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
     color: white;
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
@@ -165,28 +204,33 @@ a:hover {
 
 .btn--outline {
     background-color: transparent;
-    color: var(--text-primary);
-    border-color: var(--border-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .btn--outline:hover {
-    background-color: var(--background-light);
+    background-color: var(--primary-color);
     border-color: var(--primary-color);
-    color: var(--primary-color);
+    color: white;
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
 }
 
 /* Section Styles */
 .section-header {
-    text-align: center;
+    text-align: center !important;
     margin-bottom: var(--spacing-3xl);
+    width: 100%;
+    display: block;
 }
 
 .section-title {
     font-size: 2.25rem;
     color: var(--text-primary);
     margin-bottom: var(--spacing-md);
+    text-align: center !important;
+    width: 100%;
+    display: block;
 }
 
 .section-description {
@@ -194,6 +238,16 @@ a:hover {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    text-align: center !important;
+    width: 100%;
+    display: block;
+}
+
+.section-badge {
+    text-align: center !important;
+    display: block !important;
+    margin: 0 auto var(--spacing-md) auto !important;
+    width: fit-content !important;
 }
 
 /* Utility Classes */

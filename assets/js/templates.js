@@ -26,6 +26,10 @@ class TemplateLoader {
         await this.loadTemplate('assets/templates/shared/footer.html', '#footer');
     }
     
+    static async loadCTA() {
+        await this.loadTemplate('assets/templates/shared/cta.html', '#cta-placeholder');
+    }
+    
     static updateActiveNavLink() {
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const navLinks = document.querySelectorAll('.nav-link');
@@ -43,5 +47,6 @@ class TemplateLoader {
 // Initialize templates when DOM is loaded
 document.addEventListener('DOMContentLoaded', async () => {
     await TemplateLoader.loadNavbar();
+    await TemplateLoader.loadCTA();
     await TemplateLoader.loadFooter();
 });

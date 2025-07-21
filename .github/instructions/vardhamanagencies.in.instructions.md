@@ -5,7 +5,12 @@ applyTo: '**'
 
 ## Project Context
 
-IMP: The website should look subtle
+### IMP: 
+- The website should look subtle.
+- Make sure to go throught the steps mentioned in the rules.instructions.md after you perfrom the user assinged tasks.
+
+## Theme colors
+- #EC0002 and #004BB8
 
 **Company**: VardhamanAgencies.in  
 **Business Focus**: Bubble wrap packaging solutions for B2B and B2C markets  
@@ -26,18 +31,6 @@ IMP: The website should look subtle
 ### CSS Development
 - Write mobile-first CSS with progressive enhancement for larger screens
 - Use CSS Grid for complex layouts and Flexbox for component alignment
-- Implement CSS custom properties (variables) for consistent theming:
-  ```css
-  :root {
-    --primary-color: #2563eb;
-    --secondary-color: #059669;
-    --accent-color: #dc2626;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --background-primary: #ffffff;
-    --background-secondary: #f9fafb;
-  }
-  ```
 - Use BEM methodology for class naming (block__element--modifier)
 - Implement responsive breakpoints: 320px (mobile), 768px (tablet), 1024px (desktop), 1440px (large desktop)
 - Ensure minimum 44px touch targets for mobile interactions
@@ -52,55 +45,63 @@ IMP: The website should look subtle
 - Write descriptive function and variable names
 - Add JSDoc comments for complex functions
 
-### File Organization
-```
-VardhamanAgencies/
-├── index.html
-├── about.html
-├── products.html
-├── contact.html
-├── cart.html
-├── checkout.html
-├── assets/
-│   ├── css/
-│   │   ├── main.css
-│   │   ├── components.css
-│   │   └── responsive.css
-│   ├── js/
-│   │   ├── main.js
-│   │   ├── cart.js
-│   │   ├── products.js
-│   │   └── utils.js
-│   └── images/
-│       ├── products/
-│       ├── banners/
-│       └── icons/
-```
+## Business-Specific Details
 
-## Business-Specific Requirements
+### Vardhaman Agencies
+Incepted in the year 2006, Vardhaman Agencies is a distinguished wholesaler and trader offering an enormous consignment of Carry Bags, Adhesive Tapes, Bubble Wrap Rolls, Disposable Plates, Garbage Bag, LD Bags, Plastic Container, Plastic Rope, Disposable Spoons and much more. Immensely acclaimed in the industry owing to their preciseness, these are presented by us in standard and modified forms to our clients. To add, only optimum class material is utilized in their production. These presented by us in various provisions, these are inspected sternly to retain their optimum quality.
 
-### Product Features
-- Focus on bubble wrap packaging solutions (various sizes, types, quantities)
-- Include product specifications (dimensions, thickness, material grade)
-- Implement bulk pricing for B2B customers
-- Add packaging calculator for quantity estimation
-- Show industry applications (ecommerce, manufacturing, shipping)
+Under the administration of Mr. Deepak Parakh, we have garnered a reputed position in this highly competitive industry.
 
-### Ecommerce Functionality
-- Shopping cart with quantity controls and price calculations
-- Product filtering by size, type, price range, and application
-- Search functionality with auto-suggestions
-- Wishlist/favorites for repeat customers
-- Guest checkout option with account creation prompt
-- Order tracking and history for registered users
 
-### Trust and Credibility Elements
-- Company information and certifications
-- Customer testimonials and reviews
-- Contact information with multiple channels
-- Business hours and location details
-- Industry experience and expertise highlights
-- Professional imagery and product photography
+### Factsheet
+#### Basic Information
+
+Nature of Business	->   Retailer
+Additional Business	->   Retail Business, Wholesale Business
+Company CEO	->   Deepak G. Parakh
+Total Number of Employees	->   Upto 10 People
+GST Registration Date	->   01-07-2017
+Legal Status of Firm	->   Proprietorship
+GST Partner Name	->   Deepak Gotiram Parakh
+
+#### Statutory Profile
+
+Banker	->   BANK OF INDIA
+GST No.	->   27AKZPP1688C1ZI
+
+#### Packaging/Payment and Shipment Details
+
+Customized Packaging	->   Yes
+Payment Mode	->   Cash, Credit Card, Bank Transfer, Cheque, DD, Online
+Shipment Mode	->   By Road
+
+### Why Us?
+To become one of the preferential selections of our clients, we are working in a keen way right from our establishment in this industry. From our excellence assured assortment to rock bottom rates and delivery on-time, we have been successful in catering their needs in the best possible way.
+
+#### Following are the reasons behind the success of our firm:
+
+- Easy payment options
+- Timely shipment
+- Huge distribution network
+- Efficient functionality
+
+#### Service / Product Application Areas
+- Hotel
+- Industrial
+- Institute
+
+### Contact Information
+- Call 08043864029
+Ext 7822
+- No. 563, Ganesh Peth, Pune-411002, Maharashtra, India
+
+### Business Highlights
+- Verified Supplier on indiamart.com
+- 8 yrs of experience in the industry
+
+### Product Range
+- Bubble Wrap Rolls
+- Stretch Film 
 
 ## Performance and SEO Guidelines
 

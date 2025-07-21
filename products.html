@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Vardhaman Agencies | Premium Bubble Wrap Solutions</title>
-    <meta name="description" content="Explore our comprehensive range of bubble wrap packaging solutions. From small bubble wrap to industrial-grade protection materials.">
+    <title>Products - Vardhaman Agencies | Bubble Wrap & Stretch Films</title>
+    <meta name="description" content="Explore our range of bubble wrap and stretch film packaging solutions. Professional-grade protective materials for all your packaging needs.">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/cta.css">
     <link rel="stylesheet" href="assets/css/products.css">
 </head>
 <body>
@@ -23,7 +24,7 @@
             <div class="container">
                 <div class="page-header__content">
                     <h1 class="page-header__title">Our Products</h1>
-                    <p class="page-header__description">Comprehensive bubble wrap packaging solutions for all your protective needs</p>
+                    <p class="page-header__description">Professional bubble wrap and stretch film solutions for all your packaging needs</p>
                     <nav class="breadcrumb">
                         <a href="index.html">Home</a>
                         <span class="breadcrumb__separator">/</span>
@@ -38,7 +39,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Product Categories</h2>
-                    <p class="section-description">Choose from our extensive range of protective packaging solutions</p>
+                    <p class="section-description">Choose from our bubble wrap and stretch film packaging solutions</p>
                 </div>
                 <div class="categories-grid">
                     <div class="category-card" data-category="all">
@@ -50,32 +51,23 @@
                         <h3 class="category-card__title">All Products</h3>
                         <p class="category-card__description">View our complete product range</p>
                     </div>
-                    <div class="category-card" data-category="small-bubble">
+                    <div class="category-card" data-category="bubble-wrap">
                         <div class="category-card__icon">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                             </svg>
                         </div>
-                        <h3 class="category-card__title">Small Bubble</h3>
-                        <p class="category-card__description">Perfect for delicate items</p>
+                        <h3 class="category-card__title">Bubble Wrap</h3>
+                        <p class="category-card__description">Premium protective bubble wrap</p>
                     </div>
-                    <div class="category-card" data-category="large-bubble">
+                    <div class="category-card" data-category="stretch-films">
                         <div class="category-card__icon">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/>
                             </svg>
                         </div>
-                        <h3 class="category-card__title">Large Bubble</h3>
-                        <p class="category-card__description">Industrial-grade protection</p>
-                    </div>
-                    <div class="category-card" data-category="anti-static">
-                        <div class="category-card__icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M11.5 9C10.12 9 9 10.12 9 11.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5S12.88 9 11.5 9zM20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-8.5 11.5c-2.49 0-4.5-2.01-4.5-4.5S9.01 7 11.5 7s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"/>
-                            </svg>
-                        </div>
-                        <h3 class="category-card__title">Anti-Static</h3>
-                        <p class="category-card__description">Electronic component safety</p>
+                        <h3 class="category-card__title">Stretch Films</h3>
+                        <p class="category-card__description">Industrial-grade stretch films</p>
                     </div>
                 </div>
             </div>
@@ -87,9 +79,8 @@
                 <div class="products-filters">
                     <div class="filters-wrapper">
                         <button class="filter-btn active" data-filter="all">All Products</button>
-                        <button class="filter-btn" data-filter="small-bubble">Small Bubble</button>
-                        <button class="filter-btn" data-filter="large-bubble">Large Bubble</button>
-                        <button class="filter-btn" data-filter="anti-static">Anti-Static</button>
+                        <button class="filter-btn" data-filter="bubble-wrap">Bubble Wrap</button>
+                        <button class="filter-btn" data-filter="stretch-films">Stretch Films</button>
                     </div>
                     <div class="products-sort">
                         <select class="sort-select">
@@ -102,149 +93,63 @@
                 </div>
 
                 <div class="products-grid" id="products-grid">
-                    <!-- Small Bubble Products -->
-                    <div class="product-card" data-category="small-bubble">
-                        <div class="product-card__image">
-                            <div class="product-card__badge">Featured</div>
-                        </div>
-                        <div class="product-card__content">
-                            <h3 class="product-card__title">Small Bubble Wrap - 100ft Roll</h3>
-                            <p class="product-card__description">3/16" small bubbles perfect for electronics and delicate items</p>
-                            <div class="product-card__specs">
-                                <span class="spec">Width: 12"</span>
-                                <span class="spec">Length: 100ft</span>
-                                <span class="spec">Bubble Size: 3/16"</span>
-                            </div>
-                            <div class="product-card__price">
-                                <span class="price">₹850</span>
-                                <span class="price-unit">per roll</span>
-                            </div>
-                            <div class="product-card__actions">
-                                <button class="btn btn--primary add-to-cart" data-product="small-bubble-100">Add to Cart</button>
-                                <button class="btn btn--outline get-quote">Get Quote</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-category="small-bubble">
-                        <div class="product-card__image">
-                        </div>
-                        <div class="product-card__content">
-                            <h3 class="product-card__title">Small Bubble Wrap - 300ft Roll</h3>
-                            <p class="product-card__description">Economy pack for regular shipping needs</p>
-                            <div class="product-card__specs">
-                                <span class="spec">Width: 12"</span>
-                                <span class="spec">Length: 300ft</span>
-                                <span class="spec">Bubble Size: 3/16"</span>
-                            </div>
-                            <div class="product-card__price">
-                                <span class="price">₹2,200</span>
-                                <span class="price-unit">per roll</span>
-                            </div>
-                            <div class="product-card__actions">
-                                <button class="btn btn--primary add-to-cart" data-product="small-bubble-300">Add to Cart</button>
-                                <button class="btn btn--outline get-quote">Get Quote</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Large Bubble Products -->
-                    <div class="product-card" data-category="large-bubble">
+                    <!-- Bubble Wrap Products -->
+                    <div class="product-card" data-category="bubble-wrap">
                         <div class="product-card__image">
                             <div class="product-card__badge">Best Seller</div>
+                            <div class="product-placeholder">
+                                <div class="product-icon">📦</div>
+                                <div class="bubble-effect small-bubbles"></div>
+                            </div>
                         </div>
                         <div class="product-card__content">
-                            <h3 class="product-card__title">Large Bubble Wrap - 100ft Roll</h3>
-                            <p class="product-card__description">1/2" large bubbles for maximum cushioning</p>
+                            <h3 class="product-card__title">Bubble Wrap Rolls</h3>
+                            <p class="product-card__description">Premium quality bubble wrap for all your protective packaging needs. Available in various sizes and bubble diameters.</p>
                             <div class="product-card__specs">
-                                <span class="spec">Width: 24"</span>
-                                <span class="spec">Length: 100ft</span>
-                                <span class="spec">Bubble Size: 1/2"</span>
+                                <span class="spec">Multiple Sizes Available</span>
+                                <span class="spec">Various Bubble Diameters</span>
+                                <span class="spec">High-Quality Material</span>
+                                <span class="spec">Custom Lengths Available</span>
                             </div>
                             <div class="product-card__price">
-                                <span class="price">₹1,450</span>
-                                <span class="price-unit">per roll</span>
+                                <span class="price">Contact for Pricing</span>
                             </div>
                             <div class="product-card__actions">
-                                <button class="btn btn--primary add-to-cart" data-product="large-bubble-100">Add to Cart</button>
-                                <button class="btn btn--outline get-quote">Get Quote</button>
+                                <a href="contact.html" class="btn btn--primary">Get Quote</a>
+                                <a href="contact.html" class="btn btn--outline">Contact Us</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="product-card" data-category="large-bubble">
+                    <!-- Stretch Films -->
+                    <div class="product-card" data-category="stretch-films">
                         <div class="product-card__image">
+                            <div class="product-card__badge">Industrial Grade</div>
+                            <div class="product-placeholder">
+                                <div class="product-icon">🎞️</div>
+                                <div class="bubble-effect stretch-film"></div>
+                            </div>
                         </div>
                         <div class="product-card__content">
-                            <h3 class="product-card__title">Large Bubble Wrap - 250ft Roll</h3>
-                            <p class="product-card__description">Industrial grade for heavy-duty applications</p>
+                            <h3 class="product-card__title">Stretch Films</h3>
+                            <p class="product-card__description">High-performance stretch films for secure palletizing and shipping. Superior load holding force and puncture resistance.</p>
                             <div class="product-card__specs">
-                                <span class="spec">Width: 48"</span>
-                                <span class="spec">Length: 250ft</span>
-                                <span class="spec">Bubble Size: 1/2"</span>
+                                <span class="spec">Various Thickness Options</span>
+                                <span class="spec">Hand & Machine Grade</span>
+                                <span class="spec">Superior Stretch Capacity</span>
+                                <span class="spec">Excellent Load Retention</span>
                             </div>
                             <div class="product-card__price">
-                                <span class="price">₹5,200</span>
-                                <span class="price-unit">per roll</span>
+                                <span class="price">Contact for Pricing</span>
                             </div>
                             <div class="product-card__actions">
-                                <button class="btn btn--primary add-to-cart" data-product="large-bubble-250">Add to Cart</button>
-                                <button class="btn btn--outline get-quote">Get Quote</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Anti-Static Products -->
-                    <div class="product-card" data-category="anti-static">
-                        <div class="product-card__image">
-                            <div class="product-card__badge">Professional</div>
-                        </div>
-                        <div class="product-card__content">
-                            <h3 class="product-card__title">Anti-Static Bubble Wrap</h3>
-                            <p class="product-card__description">ESD protection for sensitive electronic components</p>
-                            <div class="product-card__specs">
-                                <span class="spec">Width: 12"</span>
-                                <span class="spec">Length: 100ft</span>
-                                <span class="spec">Anti-Static: Yes</span>
-                            </div>
-                            <div class="product-card__price">
-                                <span class="price">₹1,650</span>
-                                <span class="price-unit">per roll</span>
-                            </div>
-                            <div class="product-card__actions">
-                                <button class="btn btn--primary add-to-cart" data-product="anti-static-100">Add to Cart</button>
-                                <button class="btn btn--outline get-quote">Get Quote</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-category="anti-static">
-                        <div class="product-card__image">
-                        </div>
-                        <div class="product-card__content">
-                            <h3 class="product-card__title">Anti-Static Perforated Bags</h3>
-                            <p class="product-card__description">Pre-cut bags for quick component packaging</p>
-                            <div class="product-card__specs">
-                                <span class="spec">Size: 6"x9"</span>
-                                <span class="spec">Quantity: 100 pcs</span>
-                                <span class="spec">Anti-Static: Yes</span>
-                            </div>
-                            <div class="product-card__price">
-                                <span class="price">₹750</span>
-                                <span class="price-unit">per pack</span>
-                            </div>
-                            <div class="product-card__actions">
-                                <button class="btn btn--primary add-to-cart" data-product="anti-static-bags">Add to Cart</button>
-                                <button class="btn btn--outline get-quote">Get Quote</button>
+                                <a href="contact.html" class="btn btn--primary">Get Quote</a>
+                                <a href="contact.html" class="btn btn--outline">Contact Us</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Load More Button -->
-                <div class="products-load-more">
-                    <button class="btn btn--outline" id="load-more-btn">Load More Products</button>
-                </div>
             </div>
         </section>
 
@@ -285,6 +190,9 @@
                 </div>
             </div>
         </section>
+
+        <!-- CTA Section -->
+        <div id="cta-placeholder"></div>
     </main>
 
     <!-- Footer -->
@@ -295,6 +203,7 @@
     <script src="assets/js/templates.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/footer.js"></script>
+    <script src="assets/js/cta.js"></script>
     <script src="assets/js/products.js"></script>
 </body>
 </html>

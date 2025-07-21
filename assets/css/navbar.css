@@ -21,6 +21,15 @@
 .header__logo {
     text-decoration: none;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .header__logo h1 {
@@ -33,6 +42,11 @@
 
 .header__logo:hover {
     color: var(--primary-dark);
+}
+
+.header__logo:hover .logo-image {
+    transform: scale(1.05);
+    transition: transform var(--transition-base);
 }
 
 /* Navigation */

@@ -287,6 +287,17 @@ function checkProductParameter() {
         const subjectField = document.getElementById('subject');
         const messageField = document.getElementById('message');
         const inquiryTypeField = document.getElementById('inquiryType');
+        const productInterestField = document.getElementById('productInterest');
+        
+        // Map product names to form values
+        const productMapping = {
+            'Bubble Wrap Rolls': 'bubble-wrap',
+            'Stretch Films': 'stretch-films',
+            'bubble-wrap': 'bubble-wrap',
+            'stretch-films': 'stretch-films'
+        };
+        
+        const productValue = productMapping[product] || product.toLowerCase().replace(/\s+/g, '-');
         
         if (subjectField) {
             subjectField.value = `Inquiry about ${product}`;
@@ -298,6 +309,15 @@ function checkProductParameter() {
         
         if (inquiryTypeField) {
             inquiryTypeField.value = 'product-quote';
+        }
+        
+        if (productInterestField) {
+            // Set the product interest field based on the product parameter
+            if (productValue === 'bubble-wrap' || productValue.includes('bubble')) {
+                productInterestField.value = 'bubble-wrap';
+            } else if (productValue === 'stretch-films' || productValue.includes('stretch')) {
+                productInterestField.value = 'stretch-films';
+            }
         }
         
         // Scroll to form
