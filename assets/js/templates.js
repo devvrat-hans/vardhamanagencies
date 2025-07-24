@@ -20,6 +20,9 @@ class TemplateLoader {
         await this.loadTemplate('assets/templates/shared/navbar.html', '#header');
         // Update active nav link based on current page
         this.updateActiveNavLink();
+        
+        // Dispatch custom event to notify that navbar is loaded
+        document.dispatchEvent(new CustomEvent('navbarLoaded'));
     }
     
     static async loadFooter() {

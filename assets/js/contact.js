@@ -1,6 +1,9 @@
 // Contact page functionality
 document.addEventListener('DOMContentLoaded', () => {
-    // Wait for templates to load
+    // Initialize FAQ functionality immediately since it's in main HTML
+    initializeFAQ();
+    
+    // Wait for templates to load for other functionality
     setTimeout(initializeContactPage, 200);
 });
 
@@ -8,7 +11,7 @@ function initializeContactPage() {
     // Initialize form validation and submission
     initializeContactForm();
     
-    // Initialize FAQ functionality
+    // Re-initialize FAQ functionality to ensure it works
     initializeFAQ();
     
     // Initialize scroll animations
@@ -230,23 +233,47 @@ function clearAllFieldStates(form) {
 function initializeFAQ() {
     const faqQuestions = document.querySelectorAll('.faq-question');
     
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const faqId = question.getAttribute('data-faq');
+    if (faqQuestions.length === 0) {
+        console.log('No FAQ questions found');
+        return;
+    }
+    
+    console.log('Initializing FAQ with', faqQuestions.length, 'questions');
+    
+    faqQuestions.forEach((question, index) => {
+        // Remove any existing event listeners
+        question.replaceWith(question.cloneNode(true));
+        const newQuestion = document.querySelectorAll('.faq-question')[index];
+        
+        newQuestion.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const faqId = newQuestion.getAttribute('data-faq');
             const answer = document.querySelector(`.faq-answer[data-faq="${faqId}"]`);
-            const isActive = question.classList.contains('active');
+            const faqItem = newQuestion.closest('.faq-item');
+            const isActive = newQuestion.classList.contains('active');
+            
+            console.log('FAQ clicked:', faqId, 'Active:', isActive);
             
             // Close all other FAQs
-            faqQuestions.forEach(q => {
+            document.querySelectorAll('.faq-question').forEach(q => {
                 q.classList.remove('active');
-                const ans = document.querySelector(`.faq-answer[data-faq="${q.getAttribute('data-faq')}"]`);
-                if (ans) ans.classList.remove('active');
+                q.closest('.faq-item').classList.remove('active');
+            });
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('active');
             });
             
             // Toggle current FAQ
             if (!isActive) {
-                question.classList.add('active');
-                if (answer) answer.classList.add('active');
+                newQuestion.classList.add('active');
+                faqItem.classList.add('active');
+                if (answer) {
+                    answer.classList.add('active');
+                    console.log('FAQ opened:', faqId);
+                } else {
+                    console.log('Answer not found for FAQ:', faqId);
+                }
             }
         });
     });

@@ -19,6 +19,9 @@ function initializeHomePage() {
     
     // Initialize stats counter animation
     initializeStatsAnimation();
+    
+    // Initialize FAQ functionality
+    initializeFAQ();
 }
 
 // Scroll Animations
@@ -295,3 +298,53 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// FAQ Functionality
+function initializeFAQ() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    if (faqQuestions.length === 0) {
+        console.log('No FAQ questions found');
+        return;
+    }
+    
+    console.log('Initializing FAQ with', faqQuestions.length, 'questions');
+    
+    faqQuestions.forEach((question, index) => {
+        // Remove any existing event listeners
+        question.replaceWith(question.cloneNode(true));
+        const newQuestion = document.querySelectorAll('.faq-question')[index];
+        
+        newQuestion.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const faqId = newQuestion.getAttribute('data-faq');
+            const answer = document.querySelector(`.faq-answer[data-faq="${faqId}"]`);
+            const faqItem = newQuestion.closest('.faq-item');
+            const isActive = newQuestion.classList.contains('active');
+            
+            console.log('FAQ clicked:', faqId, 'Active:', isActive);
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.closest('.faq-item').classList.remove('active');
+            });
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('active');
+            });
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                newQuestion.classList.add('active');
+                faqItem.classList.add('active');
+                if (answer) {
+                    answer.classList.add('active');
+                    console.log('FAQ opened:', faqId);
+                } else {
+                    console.log('Answer not found for FAQ:', faqId);
+                }
+            }
+        });
+    });
+}

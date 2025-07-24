@@ -1,0 +1,165 @@
+- now create the cart page for the website. the files you can edit adn modify should include, cart.js, cart.css, cart.html and include the navbar adn footer within the page using the templates.js.
+
+- hero section is looking so wried and bad it should looks like a professional and business website, currenly, it is looking like a kids website with pink and purple color, which is weired. make the hero section of the website professinla and as best as you can.
+
+- the headings of the sections on the homepage look very weired, make them look good, these headings include "Why Choose Us", "Our Products", "Testimonials"
+
+- The image on the hero section of the homepgae doesn't look good. give me a good image for the hero section of the homepage.
+
+- The cta of the homepage and all other pages is not uniform. make a cta.html in the templates/shared folder, add its loading functionality to the templates.js. and add the cta in a proper way to all the apges of the website. Also make sure that the cta aligns with the hero section of the homepage of the website.
+
+- increase the top padding for each of the sections on the homepage of the website
+
+- the left side of the hero seciton should be left aligned and in future we are gonna have more products added to the list so, don't add any prodct names on the hero section of the website. alsoo go throught the rules.instructions.md after wrapping up with the hero section of the website
+
+- the hero section of the website doesn't look good at all, delete the code for the hero section and make a new hero section. make it look more professional good. alsoo go throught the rules.instructions.md after wrapping up with the hero section of the website
+
+- I have added the buiness detaills in the vardhamanagencies.in.instructions.md, add them to the website, whereever it is needed. alsoo go throught the rules.instructions.md after wrapping up with the hero section of the website
+
+- remove the red color from teh hero section of the website, only use white and different shaed of blue and take the content of the hero section from the vardhamanagencies.in.instructions.md.  alsoo go throught the rules.instructions.md after wrapping up with the hero section of the website
+
+- the right side of the hero section of the website is not looking good, make it look good and professional. alsoo go throught the rules.instructions.md after wrapping up with the hero section of the website
+
+- The hero section is perfect now, lets now move on to the next small section where we have features/perks of doing business with us like "Premium Quality Materials", "Same Day Dispatch" and all this. Improve the deisng of this keeping the desing of the hero section in mind. Also go throught the rules.instructions.md after wrapping up with the hero section of the website
+
+- Use white color for this text 18+ Years Experience247 Support 100% in the hero section of the website. Also go throught the rules.instructions.md after wrapping up with the hero section of the website
+
+- now the key benefits strip should have white background color, fix this thing for me. Also the sections on the homepage don't have proper top and bottom padding, make it happen. Also go through the rules.instructions.md after wrapping up with the hero section of the website
+
+- the after section-description class in the index.css, there is a bottom border visible on the website, remove that thing for me. Also go through the rules.instructions.md after wrapping up with the hero section of the website
+
+- remove the Key Benefits Strip and its contents. Also remove all the code related to it from the index.html and index.css files. Also go through the rules.instructions.md after wrapping up with the hero section of the website
+
+- the cards in the "Why Choose Us" section, remove the links which is at the end from each of them. also align the headings of the cards towards left. Also go through the rules.instructions.md after wrapping up with the hero section of the website
+
+- now, lets go to the "Our Products" section of the homepage, add the images to these sections from the workspace. Also align the headings of the cards towards left. Also go through the rules.instructions.md after wrapping up with the hero section of the website
+
+- the contents of the testimonial-author class in the testimonials section of the have its contetns here and there, making it look bad. teh desing of hte testimonials cards is good. just make the alignments of the contents of the testimonial-author class and the other classes in the testimonials section of the homepage look good. Also go through the rules.instructions.md after wrapping up with the hero section of the website
+
+- the image of the strech film product is appearing on the top of the page adn not inside the product card. fix htis thing for me on the homepage of the website. Also go through the rules.instructions.md after wrapping up with the hero section of the website
+
+- in the testimonials card of the testimonials section of the homepage, this content should have left alignment: Rajesh Sharma CEO, ShopEasy Online ★★★★★ Also go through the rules.instructions.md after wrapping up with the hero section of the website
+
+- now lets create the cta section of the website, make a cta.html in the templates/shared folder, add its loading functionality to the templates.js. and add the cta in a proper way to all the pages of the website. Also make sure that the cta aligns with the homepage of the website. also make the cta.css and cta.js and then add the code. Also go through the rules.instructions.md after wrapping up with the homepage of the website
+
+- now lets focus on the footer of the website, make it look good and professional. Remove the newsletter section and its contents form the footer. Get the updated information to be added from vardhamanagencies.in.instructions.md, Also go through the rules.instructions.md after wrapping up with the homepage of the website
+
+- the cta section of the website is not center aligned, make it center aligned. Also, reduce the height of the cta section of the website. Also there is white gap between the cta section and the footer of the website, remove that thing for me. Also go through the rules.instructions.md after wrapping up with the homepage of the website
+
+- expand the content of the cta section throught the width of the page, it is currently not expanded to the full width of the page. Remove hte right side box blob from the cta. Also go through the rules.instructions.md after wrapping up with the homepage of the website
+
+- expand the content of the cta section throught the width of the page, it is currently not expanded to the full width of the page. The content looks very concentrated in the middle.The height of the cta section should be less than half the page of the website. Also go through the rules.instructions.md after wrapping up with the homepage of the website
+
+- the buttons of the cta section seems congested, fix them. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- cta section fo the website is not looking good, make it look good and professional. Especially the buttons, their width should ve more nad the height should be less. Only the bacghround is good. rest give me the best cta section code htat i can have. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- For the cta section of the website, make the css of the buttons like the buttons on the hero section of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- now lets work on the footer of the website, make it look good and professional. Remove the newsletter section and its contents form the footer. Get the updated information to be added from vardhamanagencies.in.instructions.md, Also go through the rules.instructions.md after doing the tasks given to you.
+
+- for the cta section, reduce the top and bottom padding/margin between the elements and reduce the overall height of the cta sections. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, as we have the homepage, the ui/ux of the homepage and the cta section, we need to ensure consistency across all sections. So taking the homepage as the base and the inspiration, make the privacy policy page of the website. Files: privacy.html, privacy.css, privacy.js Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The privacy policy page'contents are not visible properly, make the contents of the privacy policy page visible properly.Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The hero section of the privacy page should be blue also the cta section of the privacy page should be blue. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, as we have the homepage, the ui/ux of the homepage and the cta section, we need to ensure consistency across all sections. So taking the homepage as the base and the inspiration, make the terms and conditions page of the website. Files: terms.html, terms.css, terms.js Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, as we have the homepage, the ui/ux of the homepage and the cta section, we need to ensure consistency across all sections. So taking the homepage as the base and the inspiration, make the refund policy page of the website. Files: refund.html, refund.css, refund.js Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Standardize the cta for all the pages of the website. The cta.html, cta.css, cta.js files are already created. Just add the cta section to all the pages of the website. Make sure that the cta of all the pages of the website should looks same, same as that of the homepage's cta of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The hero section of the privacy policy page looks very bad, make it look good and professional. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The cta section of some of the pages of the website like about, product and contact are having a shade of red color, make sure that they blue like and consistant witht the cta section on the homepage of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The content of the privacy policy page should be properly spaced out. currently the container having the text touches the cta section of the website. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: privacy.css, privacy.js, privacy.html. 
+
+- There is so much glow on the "get free quote" button on the cta section of the privacy policy page, remove that glow and make it like the cta sections of the other pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The hero section of the privacy policy page, we can imporve teh background of the hero section the color of icons/complonents/elemts which are being used before dates adn stuff can be of white color only. Keep it professional. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now the privacy policy page is perfect. I want you to similarly make the terms and conditions page for the website. Don't change anything in the UI/UX, just change the content. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: terms.css, terms.js, terms.html.
+
+- remove the bullets from the terms and conditions page. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: terms.css, terms.js, terms.html.
+
+- Now the privacy policy page is perfect. I want you to similarly make the refund policy page for the website. Don't change anything in the UI/UX, just change the content. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: refund.css, refund.js, refund.html.
+
+- Whenever i click on any of the links of the website, i see a blue box around hte link, be it navbar footer or any other link, remove that blue box from all the links of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Remove the bullet points from the refund page and add custom bullets to the refund page. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: refund.css, refund.js, refund.html.
+
+- For the terms and conditions page and the refund policy page, remove the bullet points and add custom bullets as we have for the privacy policy page. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: terms.css, terms.js, terms.html.
+
+- Like in the privacy policy page for headings, we have no bullets and for the content where bullets are needed, we have ticks. I want this type of bullets usage to be followed in the terms and conditions page and in the refund policy page. Do that for me. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: terms.css, terms.js, terms.html and refund.css, refund.js, refund.html and privacy.css, privacy.js, privacy.html.   
+
+- remove the bullet from the headings in the refund policy page. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: refund.css, refund.js, refund.html.
+
+- Now for the terms and conditions page, remove the bullets from the headings and subheadings and add custom bullets to the content where bullets are needed. These custom bullets should be like ticks that we have in the privacy policy page of the website. Also go through the rules.instructions.md after doing the tasks given to you. Files you can look for is: terms.css, terms.js, terms.html, privacy.css, privacy.js, privacy.html.
+
+- Now, the homepage, privacy policy page, terms and conditions page and the refund policy page are perfect. Now lets move on to the products page of the website. Make the products page of the website. Make sure that the products page of the website follows the theme followed in the homepage, privacy and refund page. Files you can look for is: products.html, products.css, products.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, the homepage, privacy policy page, terms and conditions page, products page and the refund policy page are perfect. Now lets move on to the products page of the website. Make the about us page of the website. Make sure that the about us page of the website follows the theme followed in the homepage, privacy and refund page. Files you can look for is: about.html, about.css, about.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- the css of the contact page is not applied properly. Make sure that the hero section of the contact us page looks like the hero section of the products page. Also make sure that the contact page has the same theme as that of the homepage, privacy and refund page. Files you can look for is: contact.html, contact.css, contact.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Make the hero section of the contact us page same as that of the products page as far as the UI/UX is concerned. Also make sure that the contact page has the same theme as that of the homepage, privacy and refund page. Files you can look for is: contact.html, contact.css, contact.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Fix the css of the FAQs' section of the contact page. The FAQs section of the contact page should have the same theme as that of the homepage, privacy and refund page. Files you can look for is: contact.html, contact.css, contact.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The FAQ's according thing is not working on the contact page. Make it work. Also the question shouldn't be bold. Files you can look for is: contact.html, contact.css, contact.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The FAQ's on opening are not looking good. Make the FAQ's on opening look good and professional. Imporve how they appear after they oopen. Files you can look for is: contact.html, contact.css, contact.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Migrate the entire code of the FAQs' section to the end of the homepage, right after the testimonials section. Files you can look for is: contact.html, contact.css, contact.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, the homepage, privacy policy page, terms and conditions page, products page, about us page and the refund policy page are perfect. Now lets move on to the contact page of the website. Make the contact page of the website. Remove the contact form from the contact page. Make sure that the contact page of the website follows the theme followed in the homepage, privacy and refund page. Files you can look for is: contact.html, contact.css, contact.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- For the FAQs section on the homepage, there is too much space between the list of questions that we have. Reduct that space a little. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The FAQs section heading on the homepage is not center aligned. Make it center aligned. The content inside the accordion on the other hand should be left aligned inside the box. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Upon hovering on the call now and the whatsapp button on the contact page, they don't look good. Keep it professional and make it look good. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- When i hover on the call now button, the text color turns blue and because the button is already blue, it looks weird. fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The alternative background color that we have on the homepage for different sections is not applied to the FAQs section on the homepage. Make it look like the other sections of the homepage. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The search functionality is not working in the navbar. make it work. Make the search.js for it. The search functionality should be able to search for the products on the products page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- When i click on the serach icon, nothing should become blurr. Make this change for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Only the navbar becomes blurr, when we click on the search icon and the search input appears. Make sure that everything except the search widget becomes blurr when we click on the search icon and the search input appears. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now when i click on the search icon, it makes the navbar a little dark, fix this thing. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now when i click on the search icon, the search widget also becomes blurr, but the search input shouldn't become blurr. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Upon clicking on the search icon, it makes the navbar dull, but it shouldn't make the navbar dull. Make sure that the navbar remains as it is when we click on the search icon. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Improve the css of the search modal. Everything inside it looks bland and white. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The footer is looking really really bad with the blue background as it not flowing in with the website after the blue colored cta. fix the background color of the footer and make it look good and professional. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now lets focus on the footer of the website, its black and dull. Also the red shade marking the start of it doesn't look good. Make it look good and professional. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Add a blogs page to the website. The UI/UX and the css of the website should be same as that of the homepage, privacy and refund page. Create a blogs folder, and the blogs can be fetched from there. For the blogs, separately create blogposts.css and blogposts.js. Files you can look for is: blogs.html, blogs.css, blogs.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Remove the newletter section and the related code from the blog page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Also add some blogs as html in the blogs folder. Add them in such a way that they can be opened from the blogs page of the website. The blogposts.css and the blogposts.js should be applied to them so as to maintain the consistancy across the blogposts. Also go through the rules.instructions.md after doing the tasks given to you.
+
+The cta section looks a bit weird on the blogs page, conjusted towards the left side. Make it look like it looks on the homepage. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Now, i want to add the chatbot to all the pages of the website. Make a chatbot.html in the templates/shared and the chatbot.js and chatbot.css for it. The chatbot will be nothing but will include an option to choose from the set of hardcoded questions from hardcoded categories. The final reponse if the user gets anything not form the hardcoded reponses and questions will be to contact us information. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Add the product images from the workspace to the products page. The product images should be added to the products page in a way that they are responsive and look good on all devices. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Currently, we have demo data on the about us page. Replace that with the actual data from the vardhamanagencies.in.instructions.md. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Currently, we have demo data on the contact us page. Replace that with the actual data from the vardhamanagencies.in.instructions.md. Also go through the rules.instructions.md after doing the tasks given to you.
+
+

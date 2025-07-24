@@ -2,7 +2,8 @@
 .cta {
     position: relative;
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+    background: linear-gradient(135deg, #004BB8 0%, #003a91 100%) !important;
     color: var(--white);
     overflow: hidden;
     margin: 0;
@@ -95,33 +96,53 @@
     white-space: nowrap;
 }
 
-.cta__actions .btn--primary {
-    background: #3b82f6;
-    color: white;
-    border: 2px solid #3b82f6;
+.cta__actions .btn--primary,
+.cta .btn--primary {
+    background: #3b82f6 !important;
+    color: white !important;
+    border: 2px solid #3b82f6 !important;
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
 }
 
-.cta__actions .btn--primary:hover {
+.cta__actions .btn--primary:hover,
+.cta .btn--primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
-    background: #2563eb;
-    border-color: #2563eb;
-    color: white;
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: white !important;
 }
 
-.cta__actions .btn--outline {
-    background: transparent;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.4);
+.cta__actions .btn--outline,
+.cta .btn--outline {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
 }
 
-.cta__actions .btn--outline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--white);
-    color: white;
+.cta__actions .btn--outline:hover,
+.cta .btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--white) !important;
+    color: white !important;
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure no secondary (red) colors are used in CTA sections */
+.cta .btn--secondary {
+    background: #3b82f6 !important;
+    color: white !important;
+    border: 2px solid #3b82f6 !important;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.cta .btn--secondary:hover {
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
 }
 
 .cta__actions .btn__icon {
@@ -312,4 +333,48 @@
     .cta__feature {
         font-size: 0.9rem;
     }
+}
+
+/* Global CTA section color consistency overrides */
+section.cta,
+.cta-section,
+#cta,
+#cta-placeholder .cta {
+    background: linear-gradient(135deg, #004BB8 0%, #003a91 100%) !important;
+    color: white !important;
+}
+
+/* Ensure CTA buttons on all pages use blue theme */
+section.cta .btn,
+.cta-section .btn,
+#cta .btn,
+#cta-placeholder .btn {
+    border: none !important;
+}
+
+section.cta .btn--primary,
+.cta-section .btn--primary,
+#cta .btn--primary,
+#cta-placeholder .btn--primary {
+    background: #3b82f6 !important;
+    color: white !important;
+    border: 2px solid #3b82f6 !important;
+}
+
+section.cta .btn--secondary,
+.cta-section .btn--secondary,
+#cta .btn--secondary,
+#cta-placeholder .btn--secondary {
+    background: #3b82f6 !important;
+    color: white !important;
+    border: 2px solid #3b82f6 !important;
+}
+
+section.cta .btn--outline,
+.cta-section .btn--outline,
+#cta .btn--outline,
+#cta-placeholder .btn--outline {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
 }

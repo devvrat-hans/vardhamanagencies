@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/cta.css">
     <link rel="stylesheet" href="assets/css/products.css">
 </head>
-<body>
+<body class="products-page">
     <!-- Header -->
     <header class="header" id="header">
         <!-- Navbar will be loaded here -->
@@ -19,17 +19,34 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Page Header -->
-        <section class="page-header">
+        <!-- Hero Section -->
+        <section class="products-hero">
             <div class="container">
-                <div class="page-header__content">
-                    <h1 class="page-header__title">Our Products</h1>
-                    <p class="page-header__description">Professional bubble wrap and stretch film solutions for all your packaging needs</p>
-                    <nav class="breadcrumb">
-                        <a href="index.html">Home</a>
-                        <span class="breadcrumb__separator">/</span>
-                        <span class="breadcrumb__current">Products</span>
-                    </nav>
+                <div class="products-hero__content">
+                    <div class="products-hero__badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <span>Premium Products</span>
+                    </div>
+                    <h1 class="products-hero__title">Our Products</h1>
+                    <p class="products-hero__description">
+                        Professional bubble wrap and stretch film solutions for all your packaging needs. High-quality protective materials designed to safeguard your products during storage and shipping.
+                    </p>
+                    <div class="products-hero__meta">
+                        <div class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span>Quality Guaranteed</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                            <span>Custom Sizes Available</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -202,6 +219,7 @@
 
     <script src="assets/js/templates.js"></script>
     <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/search.js"></script>
     <script src="assets/js/footer.js"></script>
     <script src="assets/js/cta.js"></script>
     <script src="assets/js/products.js"></script>

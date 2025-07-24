@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Vardhaman Agencies | Packaging Industry Insights & Tips</title>
+    <meta name="description" content="Stay updated with the latest packaging industry trends, bubble wrap tips, and professional insights from Vardhaman Agencies experts.">
+    <meta name="keywords" content="packaging blog, bubble wrap tips, industry insights, Vardhaman Agencies, packaging solutions">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/cta.css">
+    <link rel="stylesheet" href="assets/css/blogs.css">
+    <link rel="stylesheet" href="assets/css/blogposts.css">
+</head>
+<body class="blogs-page">
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Navbar will be loaded here -->
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="blogs-hero">
+            <div class="container">
+                <div class="blogs-hero__content">
+                    <div class="blogs-hero__badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <span>Industry Insights</span>
+                    </div>
+                    <h1 class="blogs-hero__title">Packaging Industry Blog</h1>
+                    <p class="blogs-hero__description">
+                        Discover expert insights, industry trends, and practical tips from our packaging professionals. Stay informed about the latest developments in bubble wrap, protective packaging, and sustainable solutions.
+                    </p>
+                    <div class="blogs-hero__meta">
+                        <div class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span>Expert Content</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 14H5V5h2v3h10V5h2v12z"/>
+                            </svg>
+                            <span>Updated Weekly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Categories -->
+        <section class="blog-categories">
+            <div class="container">
+                <div class="categories-filter">
+                    <button class="category-btn active" data-category="all">All Posts</button>
+                    <button class="category-btn" data-category="industry-trends">Industry Trends</button>
+                    <button class="category-btn" data-category="packaging-tips">Packaging Tips</button>
+                    <button class="category-btn" data-category="sustainability">Sustainability</button>
+                    <button class="category-btn" data-category="product-guides">Product Guides</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="blog-posts">
+            <div class="container">
+                <div class="blog-grid" id="blogGrid">
+                    <!-- Blog posts will be loaded here dynamically -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="blog-load-more">
+                    <button class="btn btn-outline" id="loadMoreBtn">
+                        <span>Load More Articles</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" id="cta-placeholder">
+            <!-- CTA will be loaded here -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Footer will be loaded here -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/cta.js"></script>
+    <script src="assets/js/blogs.js"></script>
+    <script src="assets/js/blogposts.js"></script>
+
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', async function() {
+            await TemplateLoader.loadNavbar();
+            await TemplateLoader.loadFooter();
+            await TemplateLoader.loadCTA();
+        });
+    </script>
+</body>
+</html>

@@ -11,12 +11,13 @@
     
     /* Neutral Colors */
     --text-primary: #2d3748;
-    --text-secondary: #718096;
+    --text-secondary: #777777;
     --text-light: #a0aec0;
     --background: #ffffff;
     --background-light: #f7fafc;
     --border-color: #e2e8f0;
     --border-light: #f1f5f9;
+    --white: #ffffff;
     
     /* Shadows */
     --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -91,6 +92,38 @@
     box-sizing: border-box;
 }
 
+/* Remove blue focus outline from all interactive elements */
+a,
+button,
+input,
+textarea,
+select,
+[tabindex],
+[contenteditable] {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Add custom focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-sm);
+}
+
+/* Remove focus outline specifically for mouse users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible) {
+    outline: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -103,6 +136,14 @@ body {
     background-color: var(--background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure no CTA sections use red colors - Global override */
+.cta, .cta-section, #cta {
+    --primary-color: #004BB8 !important;
+    --primary-dark: #003a91 !important;
+    --secondary-color: #004BB8 !important; /* Override red with blue for CTA sections */
+    --secondary-dark: #003a91 !important;
 }
 
 /* Typography */
