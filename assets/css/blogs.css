@@ -2,11 +2,14 @@
 
 /* Hero Section */
 .blogs-hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, #004BB8 0%, #003a91 100%);
     color: white;
-    padding: 120px 0 80px;
+    padding: 100px 0;
     position: relative;
     overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
 }
 
 .blogs-hero::before {
@@ -16,31 +19,37 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
     pointer-events: none;
 }
 
 .blogs-hero__content {
+    position: relative;
+    z-index: 2;
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .blogs-hero__badge {
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: 0.5rem;
     background: rgba(255, 255, 255, 0.1);
-    padding: var(--spacing-sm) var(--spacing-lg);
+    backdrop-filter: blur(20px);
+    padding: 0.5rem 1.5rem;
     border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: var(--spacing-lg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .blogs-hero__badge svg {
@@ -50,9 +59,10 @@
 
 .blogs-hero__title {
     font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.2;
+    font-weight: 800;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
 }
 
 .blogs-hero__description {
@@ -72,9 +82,14 @@
 .meta-item {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: white;
 }
 
 .meta-item svg {
@@ -106,6 +121,11 @@
     cursor: pointer;
     transition: all var(--transition-base);
     font-size: 0.9rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    width: auto;
+    max-width: none;
+    display: inline-block;
 }
 
 .category-btn:hover,
@@ -127,21 +147,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-3xl);
 }
 
-/* Blog Load More */
-.blog-load-more {
-    text-align: center;
-}
-
-.blog-load-more .btn {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: 1rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
+/* CTA Section for Blogs Page - Ensure consistency with homepage */
+.blogs-page .cta {
+    margin-top: 0;
+    /* Now inherits exact same styling as homepage */
 }
 
 /* Responsive Design */
@@ -185,5 +196,15 @@
     .blogs-hero__meta {
         flex-direction: column;
         gap: var(--spacing-md);
+    }
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
     }
 }

@@ -13,6 +13,9 @@
     --text-primary: #2d3748;
     --text-secondary: #777777;
     --text-light: #a0aec0;
+    --text-color: #2d3748;
+    --text-muted: #777777;
+    --light-gray: #f7fafc;
     --background: #ffffff;
     --background-light: #f7fafc;
     --border-color: #e2e8f0;
@@ -38,6 +41,7 @@
     --spacing-3xl: 4rem;
     
     /* Border Radius */
+    --border-radius: 0.5rem;
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
     --border-radius-lg: 0.75rem;

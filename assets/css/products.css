@@ -341,31 +341,60 @@
 
 .product-card__image {
     height: 250px;
-    background: linear-gradient(135deg, #004BB8 0%, #003a91 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: 600;
     position: relative;
     overflow: hidden;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    background-color: #f8f9fa;
+    padding: var(--spacing-md);
+    /* Ensure images scale properly on all devices */
+    max-width: 100%;
+    height: auto;
+    min-height: 200px;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+/* Image loading state */
+.product-image[src=""] {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+}
+
+.product-image[src=""]:after {
+    content: "📦";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.08);
 }
 
 .product-card__image::before {
-    content: 'Product Image';
-    z-index: 2;
-    position: relative;
+    display: none;
 }
 
 .product-card__image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><circle cx="12.5" cy="12.5" r="6" fill="rgba(44,90,160,0.1)"/><circle cx="37.5" cy="12.5" r="6" fill="rgba(44,90,160,0.1)"/><circle cx="12.5" cy="37.5" r="6" fill="rgba(44,90,160,0.1)"/><circle cx="37.5" cy="37.5" r="6" fill="rgba(44,90,160,0.1)"/></svg>') repeat;
-    opacity: 0.5;
+    display: none;
 }
 
 .product-card__badge {
@@ -582,6 +611,14 @@
         width: 100%;
     }
     
+    .product-card__image {
+        height: 220px;
+    }
+    
+    .product-image {
+        border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    }
+    
     .features-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
@@ -618,6 +655,14 @@
     .filter-btn {
         flex: 1;
         text-align: center;
+    }
+    
+    .product-card__image {
+        height: 200px;
+    }
+    
+    .product-image {
+        border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
     }
     
     .product-card__specs {

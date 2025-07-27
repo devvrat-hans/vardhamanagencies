@@ -1,85 +1,104 @@
 // Homepage specific functionality
 document.addEventListener('DOMContentLoaded', () => {
-    // Wait for templates to load
-    setTimeout(initializeHomePage, 200);
+    // Add loading class to body
+    document.body.classList.add('page-loading');
+    
+    // Initialize immediately for better performance
+    initializeHomePage();
+    
+    // Remove loading class after everything is initialized
+    requestAnimationFrame(() => {
+        document.body.classList.remove('page-loading');
+        document.body.classList.add('page-loaded');
+    });
 });
 
 function initializeHomePage() {
-    // Initialize scroll animations
-    initializeScrollAnimations();
-    
-    // Initialize product filtering
-    initializeProductFiltering();
-    
-    // Initialize smooth scrolling
+    // Initialize critical functionality first
     initializeSmoothScrolling();
     
-    // Initialize parallax effects
-    initializeParallaxEffects();
-    
-    // Initialize stats counter animation
-    initializeStatsAnimation();
-    
-    // Initialize FAQ functionality
-    initializeFAQ();
+    // Use requestAnimationFrame for non-critical animations
+    requestAnimationFrame(() => {
+        initializeScrollAnimations();
+        initializeParallaxEffects();
+        initializeStatsAnimation();
+        initializeFAQ();
+        
+        // Initialize product filtering with a slight delay to ensure DOM is ready
+        setTimeout(() => {
+            initializeProductFiltering();
+        }, 200);
+    });
 }
 
 // Scroll Animations
 function initializeScrollAnimations() {
+    // Use passive event listeners for better performance
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
+                // Use requestAnimationFrame for smooth animations
+                requestAnimationFrame(() => {
+                    entry.target.classList.add('fade-in-up');
+                });
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll(
-        '.feature, .product-card, .testimonial-card, .benefit, .section-header'
-    );
-    animatedElements.forEach(el => observer.observe(el));
+    // Observe elements for animation with delay
+    setTimeout(() => {
+        const animatedElements = document.querySelectorAll(
+            '.feature, .product-card, .testimonial-card, .benefit, .section-header'
+        );
+        animatedElements.forEach(el => observer.observe(el));
+    }, 100);
 }
 
 // Product Filtering
 function initializeProductFiltering() {
+    
     const categoryButtons = document.querySelectorAll('.category-btn');
     const productCards = document.querySelectorAll('.product-card[data-category]');
     
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', () => {
+    
+    if (categoryButtons.length === 0 || productCards.length === 0) {
+        return;
+    }
+    
+    categoryButtons.forEach((button, index) => {
+        
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
             const category = button.getAttribute('data-category');
             
             // Update active button
             categoryButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             
-            // Filter products
+            // Filter products immediately
             filterProducts(category, productCards);
         });
+    });
+    
+    productCards.forEach((card, index) => {
     });
 }
 
 function filterProducts(category, productCards) {
-    productCards.forEach(card => {
+    
+    productCards.forEach((card, index) => {
         const cardCategory = card.getAttribute('data-category');
         
         if (category === 'all' || cardCategory === category) {
             card.classList.remove('hidden');
-            card.style.display = 'block';
         } else {
             card.classList.add('hidden');
-            setTimeout(() => {
-                if (card.classList.contains('hidden')) {
-                    card.style.display = 'none';
-                }
-            }, 300);
         }
     });
 }
@@ -245,7 +264,6 @@ function closeToast(toast) {
 const ctaButtons = document.querySelectorAll('.btn');
 ctaButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-        console.log('CTA button clicked:', button.textContent.trim());
         // Add analytics tracking here if needed
     });
 });
@@ -304,11 +322,9 @@ function initializeFAQ() {
     const faqQuestions = document.querySelectorAll('.faq-question');
     
     if (faqQuestions.length === 0) {
-        console.log('No FAQ questions found');
         return;
     }
     
-    console.log('Initializing FAQ with', faqQuestions.length, 'questions');
     
     faqQuestions.forEach((question, index) => {
         // Remove any existing event listeners
@@ -323,7 +339,6 @@ function initializeFAQ() {
             const faqItem = newQuestion.closest('.faq-item');
             const isActive = newQuestion.classList.contains('active');
             
-            console.log('FAQ clicked:', faqId, 'Active:', isActive);
             
             // Close all other FAQs
             document.querySelectorAll('.faq-question').forEach(q => {
@@ -340,9 +355,7 @@ function initializeFAQ() {
                 faqItem.classList.add('active');
                 if (answer) {
                     answer.classList.add('active');
-                    console.log('FAQ opened:', faqId);
                 } else {
-                    console.log('Answer not found for FAQ:', faqId);
                 }
             }
         });

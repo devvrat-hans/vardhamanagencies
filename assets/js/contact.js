@@ -27,9 +27,10 @@ function initializeContactPage() {
 // Contact Form Handling
 function initializeContactForm() {
     const form = document.getElementById('contact-form');
-    const submitBtn = form.querySelector('.form-submit');
     
     if (!form) return;
+    
+    const submitBtn = form.querySelector('.form-submit');
     
     // Real-time validation
     const inputs = form.querySelectorAll('.form-input, .form-textarea');
@@ -234,11 +235,9 @@ function initializeFAQ() {
     const faqQuestions = document.querySelectorAll('.faq-question');
     
     if (faqQuestions.length === 0) {
-        console.log('No FAQ questions found');
         return;
     }
     
-    console.log('Initializing FAQ with', faqQuestions.length, 'questions');
     
     faqQuestions.forEach((question, index) => {
         // Remove any existing event listeners
@@ -253,7 +252,6 @@ function initializeFAQ() {
             const faqItem = newQuestion.closest('.faq-item');
             const isActive = newQuestion.classList.contains('active');
             
-            console.log('FAQ clicked:', faqId, 'Active:', isActive);
             
             // Close all other FAQs
             document.querySelectorAll('.faq-question').forEach(q => {
@@ -270,9 +268,7 @@ function initializeFAQ() {
                 faqItem.classList.add('active');
                 if (answer) {
                     answer.classList.add('active');
-                    console.log('FAQ opened:', faqId);
                 } else {
-                    console.log('Answer not found for FAQ:', faqId);
                 }
             }
         });
@@ -349,10 +345,13 @@ function checkProductParameter() {
         
         // Scroll to form
         setTimeout(() => {
-            document.querySelector('.contact-form-section').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            const contactFormSection = document.querySelector('.contact-form-section');
+            if (contactFormSection) {
+                contactFormSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }, 500);
     }
 }
@@ -472,7 +471,6 @@ function trackInteractions() {
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
             const faqText = question.querySelector('span').textContent;
-            console.log('FAQ clicked:', faqText);
         });
     });
     
@@ -480,7 +478,6 @@ function trackInteractions() {
     document.querySelectorAll('.sidebar-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const btnText = btn.textContent.trim();
-            console.log('Sidebar button clicked:', btnText);
         });
     });
     
@@ -488,7 +485,6 @@ function trackInteractions() {
     document.querySelectorAll('.contact-link').forEach(link => {
         link.addEventListener('click', () => {
             const linkText = link.textContent.trim();
-            console.log('Contact link clicked:', linkText);
         });
     });
 }

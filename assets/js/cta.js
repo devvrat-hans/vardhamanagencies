@@ -168,7 +168,6 @@ class CTASection {
             gtag('event', eventName, properties);
         }
         
-        console.log('Event tracked:', eventName, properties);
     }
 }
 

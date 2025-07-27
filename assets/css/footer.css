@@ -52,10 +52,10 @@
     position: absolute;
     bottom: -8px;
     left: 0;
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
-    border-radius: 2px;
+    width: 30px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
 }
 
 .footer__column p {
@@ -88,23 +88,7 @@
 
 .footer__column ul li a:hover {
     color: white;
-    transform: translateX(8px);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-.footer__column ul li a::before {
-    content: '▶';
-    position: absolute;
-    left: -15px;
-    opacity: 0;
-    transition: all var(--transition-base);
-    font-size: 0.7rem;
-    color: var(--primary-color);
-}
-
-.footer__column ul li a:hover::before {
-    opacity: 1;
-    left: -20px;
+    transform: translateX(6px);
 }
 
 .footer__heading {
@@ -155,8 +139,8 @@
     bottom: -4px;
     left: 0;
     width: 0;
-    height: 2px;
-    background: var(--primary-color);
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
     transition: width var(--transition-base);
 }
 
@@ -166,7 +150,7 @@
 
 .footer__bottom-links a:hover {
     color: white;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
 .footer__bottom-links span {
@@ -196,10 +180,10 @@
 }
 
 .footer__social-link:hover {
-    background: var(--primary-color);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
 .footer__social-link svg {

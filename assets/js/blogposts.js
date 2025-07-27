@@ -9,7 +9,7 @@ class BlogPostLoader {
                 excerpt: "Discover everything you need to know about bubble wrap packaging, from different types and sizes to optimal usage scenarios for maximum protection.",
                 content: "",
                 author: "Raj Sharma",
-                date: "2024-07-20",
+                date: "2025-07-20",
                 category: "product-guides",
                 tags: ["bubble-wrap", "packaging-tips", "protection"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
@@ -22,7 +22,7 @@ class BlogPostLoader {
                 excerpt: "Explore eco-friendly alternatives and sustainable practices in the packaging industry while maintaining optimal product protection.",
                 content: "",
                 author: "Priya Patel",
-                date: "2024-07-18",
+                date: "2025-07-18",
                 category: "sustainability",
                 tags: ["eco-friendly", "sustainability", "green-packaging"],
                 image: BlogPostLoader.generatePlaceholderImage("sustainability"),
@@ -31,16 +31,16 @@ class BlogPostLoader {
             },
             {
                 id: 3,
-                title: "Industry Trends 2024: What's Shaping the Packaging Market",
+                title: "Packaging Industry Trends 2025: What's Shaping the Market",
                 excerpt: "Stay ahead with the latest trends in packaging technology, consumer preferences, and market dynamics affecting the industry.",
                 content: "",
                 author: "Amit Kumar",
-                date: "2024-07-15",
+                date: "2025-07-15",
                 category: "industry-trends",
                 tags: ["market-analysis", "trends", "technology"],
                 image: BlogPostLoader.generatePlaceholderImage("industry-trends"),
                 readTime: 10,
-                url: "blogs/packaging-industry-trends-2024.html"
+                url: "blogs/packaging-industry-trends-2025.html"
             },
             {
                 id: 4,
@@ -48,7 +48,7 @@ class BlogPostLoader {
                 excerpt: "Compare stretch film and bubble wrap to determine the best protective packaging solution for your specific needs and applications.",
                 content: "",
                 author: "Suresh Gupta",
-                date: "2024-07-12",
+                date: "2025-07-12",
                 category: "product-guides",
                 tags: ["stretch-film", "bubble-wrap", "comparison"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
@@ -61,7 +61,7 @@ class BlogPostLoader {
                 excerpt: "Learn strategies to optimize packaging costs without compromising on quality or protection in your business operations.",
                 content: "",
                 author: "Neha Singh",
-                date: "2024-07-10",
+                date: "2025-07-10",
                 category: "packaging-tips",
                 tags: ["cost-optimization", "efficiency", "business"],
                 image: BlogPostLoader.generatePlaceholderImage("packaging-tips"),
@@ -74,7 +74,7 @@ class BlogPostLoader {
                 excerpt: "Essential packaging tips for e-commerce businesses to ensure products arrive safely while enhancing customer experience.",
                 content: "",
                 author: "Vikram Reddy",
-                date: "2024-07-08",
+                date: "2025-07-08",
                 category: "packaging-tips",
                 tags: ["e-commerce", "retail", "customer-experience"],
                 image: BlogPostLoader.generatePlaceholderImage("packaging-tips"),
@@ -87,7 +87,7 @@ class BlogPostLoader {
                 excerpt: "Navigate the complex landscape of packaging regulations, standards, and compliance requirements for businesses in India.",
                 content: "",
                 author: "Dr. Anita Joshi",
-                date: "2024-07-05",
+                date: "2025-07-05",
                 category: "industry-trends",
                 tags: ["regulations", "compliance", "legal"],
                 image: BlogPostLoader.generatePlaceholderImage("industry-trends"),
@@ -100,7 +100,7 @@ class BlogPostLoader {
                 excerpt: "Dive deep into the physics and engineering principles that make bubble wrap such an effective protective packaging material.",
                 content: "",
                 author: "Prof. Rajesh Mehta",
-                date: "2024-07-03",
+                date: "2025-07-03",
                 category: "product-guides",
                 tags: ["science", "technology", "innovation"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
@@ -113,7 +113,7 @@ class BlogPostLoader {
                 excerpt: "Learn about proper recycling methods and disposal practices for various packaging materials to minimize environmental impact.",
                 content: "",
                 author: "Green Team VA",
-                date: "2024-07-01",
+                date: "2025-07-01",
                 category: "sustainability",
                 tags: ["recycling", "waste-management", "environment"],
                 image: BlogPostLoader.generatePlaceholderImage("sustainability"),
@@ -205,18 +205,6 @@ class BlogPost {
         if (diffDays < 30) return `${Math.ceil(diffDays / 7)} weeks ago`;
         if (diffDays < 365) return `${Math.ceil(diffDays / 30)} months ago`;
         return `${Math.ceil(diffDays / 365)} years ago`;
-    }
-    
-    getSocialShareUrls() {
-        const encodedTitle = encodeURIComponent(this.title);
-        const encodedUrl = encodeURIComponent(window.location.origin + '/' + this.url);
-        
-        return {
-            twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
-            facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-            linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
-            whatsapp: `https://wa.me/?text=${encodedTitle} ${encodedUrl}`
-        };
     }
     
     toHTML(template = 'card') {

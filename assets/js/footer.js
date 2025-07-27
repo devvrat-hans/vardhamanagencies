@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         socialLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('Social media link clicked:', link.getAttribute('aria-label'));
                 // You can add actual social media links here
             });
         });

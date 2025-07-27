@@ -1,5 +1,5 @@
-// Template loader utility
-class TemplateLoader {
+// Template loader utility for blog posts
+class TemplateBlogLoader {
     static async loadTemplate(templatePath, targetElement) {
         try {
             const response = await fetch(templatePath);
@@ -16,30 +16,25 @@ class TemplateLoader {
     }
     
     static async loadNavbar() {
-        await this.loadTemplate('assets/templates/shared/navbar.html', '#header');
+        await this.loadTemplate('../assets/templates/shared/navbar.html', '#header');
+        // Update active nav link based on current page
+        this.updateActiveNavLink();
         
-        // Wait a bit for DOM to be fully updated
-        setTimeout(() => {
-            // Update active nav link based on current page
-            this.updateActiveNavLink();
-            
-            // Dispatch custom event to notify that navbar is loaded
-            document.dispatchEvent(new CustomEvent('navbarLoaded'));
-        }, 100);
+        // Dispatch custom event to notify that navbar is loaded
+        document.dispatchEvent(new CustomEvent('navbarLoaded'));
     }
     
     static async loadFooter() {
-        await this.loadTemplate('assets/templates/shared/footer.html', '#footer');
+        await this.loadTemplate('../assets/templates/shared/footer.html', '#footer');
     }
     
     static async loadCTA() {
-        await this.loadTemplate('assets/templates/shared/cta.html', '#cta-placeholder');
+        await this.loadTemplate('../assets/templates/shared/cta.html', '#cta-placeholder');
     }
     
     static async loadScrollToTop() {
-        // Load the scroll-to-top button into the body
         try {
-            const response = await fetch('assets/templates/shared/scroll-to-top.html');
+            const response = await fetch('../assets/templates/shared/scroll-to-top.html');
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
@@ -57,58 +52,69 @@ class TemplateLoader {
     }
     
     static async loadChatbot() {
-        // Load the chatbot into the body
         try {
-            const response = await fetch(`assets/templates/shared/chatbot.html?v=${Date.now()}`);
+            const response = await fetch('../assets/templates/shared/chatbot.html');
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
                 if (!document.getElementById('chatbot')) {
                     document.body.insertAdjacentHTML('beforeend', html);
+                } else {
                 }
                 
                 // Dispatch event to notify that chatbot template is loaded
                 document.dispatchEvent(new CustomEvent('templateLoaded', {
                     detail: { template: 'chatbot' }
                 }));
+            } else {
             }
         } catch (error) {
         }
     }
     
     static updateActiveNavLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const navLinks = document.querySelectorAll('.nav-link');
-        
         
         navLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
-            
-            // Extract filename from href (remove ../ prefix)
-            const linkPage = href.replace('../', '').replace('./', '');
-            
-            // Check for exact match
-            if (linkPage === currentPage) {
-                link.classList.add('active');
-            }
-            // Check for index page (empty path or index.html)
-            else if ((currentPage === '' || currentPage === 'index.html') && (linkPage === 'index.html' || linkPage === '')) {
-                link.classList.add('active');
-            }
-            // Check for blogs page and blog posts
-            else if (currentPage.includes('blog') && linkPage === 'blogs.html') {
+            // For blog posts, highlight the blog nav link
+            if (href === 'blogs.html' || href === '../blogs.html') {
                 link.classList.add('active');
             }
         });
     }
+    
+    static async loadAllTemplates() {
+        // Load critical templates first (navbar, chatbot, and scroll-to-top for immediate functionality)
+        const criticalTemplates = [
+            this.loadNavbar(),
+            this.loadChatbot(),
+            this.loadScrollToTop()
+        ];
+        
+        // Load non-critical templates after critical ones
+        const nonCriticalTemplates = [
+            this.loadFooter(),
+            this.loadCTA()
+        ];
+        
+        // Load critical templates immediately
+        await Promise.all(criticalTemplates);
+        
+        // Load non-critical templates with slight delay
+        setTimeout(() => {
+            Promise.all(nonCriticalTemplates);
+        }, 100);
+    }
+    
+    static initScrollToTop() {
+        // This method is now handled by scroll-to-top.js
+        // Kept for backward compatibility
+    }
 }
 
-// Initialize templates when DOM is loaded
-document.addEventListener('DOMContentLoaded', async () => {
-    await TemplateLoader.loadNavbar();
-    await TemplateLoader.loadCTA();
-    await TemplateLoader.loadFooter();
-    await TemplateLoader.loadScrollToTop();
-    await TemplateLoader.loadChatbot();
-});
+// Export for manual usage
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = TemplateBlogLoader;
+}

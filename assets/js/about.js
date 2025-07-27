@@ -157,7 +157,6 @@ function trackCTAClicks() {
     ctaButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             const buttonText = button.textContent.trim();
-            console.log('About page CTA clicked:', buttonText);
             
             // Add analytics tracking here if needed
             // gtag('event', 'click', {
@@ -258,4 +257,4 @@ function initializeScrollProgress() {
 }
 
 // Initialize scroll progress
-initializeScrollProgress();
+// initializeScrollProgress(); // Disabled as per user request

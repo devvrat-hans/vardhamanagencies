@@ -148,18 +148,150 @@
 
 - Add a blogs page to the website. The UI/UX and the css of the website should be same as that of the homepage, privacy and refund page. Create a blogs folder, and the blogs can be fetched from there. For the blogs, separately create blogposts.css and blogposts.js. Files you can look for is: blogs.html, blogs.css, blogs.js, templates.js. Also go through the rules.instructions.md after doing the tasks given to you.
 
-Remove the newletter section and the related code from the blog page. Also go through the rules.instructions.md after doing the tasks given to you.
+- Remove the newsletter section and the related code from the blog page. Also go through the rules.instructions.md after doing the tasks given to you.
 
-Also add some blogs as html in the blogs folder. Add them in such a way that they can be opened from the blogs page of the website. The blogposts.css and the blogposts.js should be applied to them so as to maintain the consistancy across the blogposts. Also go through the rules.instructions.md after doing the tasks given to you.
+- Also add some blogs as html in the blogs folder. Add them in such a way that they can be opened from the blogs page of the website. The blogposts.css and the blogposts.js should be applied to them so as to maintain the consistancy across the blogposts. Also go through the rules.instructions.md after doing the tasks given to you.
 
-The cta section looks a bit weird on the blogs page, conjusted towards the left side. Make it look like it looks on the homepage. Also go through the rules.instructions.md after doing the tasks given to you.
+- The things are loading very abruptly on the homepage of the website. Make sure that the things are loaded on the homepage as fast they can and they are properly loaded. Also go through the rules.instructions.md after doing the tasks given to you.
 
-Now, i want to add the chatbot to all the pages of the website. Make a chatbot.html in the templates/shared and the chatbot.js and chatbot.css for it. The chatbot will be nothing but will include an option to choose from the set of hardcoded questions from hardcoded categories. The final reponse if the user gets anything not form the hardcoded reponses and questions will be to contact us information. Also go through the rules.instructions.md after doing the tasks given to you.
+- The cta section looks a bit weird on the blogs page, conjusted towards the left side. Make it look like it looks on the homepage. Make sure that the cta template is being loaded properly and finally the cta looks best as it is on contact, about and products page. Also go through the rules.instructions.md after doing the tasks given to you.
 
-Add the product images from the workspace to the products page. The product images should be added to the products page in a way that they are responsive and look good on all devices. Also go through the rules.instructions.md after doing the tasks given to you.
+- Remove the load more articles button from the blogs page. Also go through the rules.instructions.md after doing the tasks given to you.
 
-Currently, we have demo data on the about us page. Replace that with the actual data from the vardhamanagencies.in.instructions.md. Also go through the rules.instructions.md after doing the tasks given to you.
+- The cta on the homepage and that on the blogposts are not same. The cta on the blogposts are squeezed towards left. Make sure that the cta on all the blogposts is same as that on the homepage. Also go through the rules.instructions.md after doing the tasks given to you.
 
-Currently, we have demo data on the contact us page. Replace that with the actual data from the vardhamanagencies.in.instructions.md. Also go through the rules.instructions.md after doing the tasks given to you.
+- The scroll to top button is not working properly on any of the pages of the website. Make sure that the scroll to top button is working on all the pages of the website. The scroll to top button should be visible only when the user scrolls down the page. Also go through the rules.instructions.md after doing the tasks given to you.
 
+- When I click on the scroll to top button on any of the pages of the website, it very tries taking the page to the top but is very bad. Make the scroll to top functionality, the best you can. Also go through the rules.instructions.md after doing the tasks given to you.
 
+- The scroll to top feature is now better but it is still slow in the start and then it speeds up. Make the scroll to top feature smooth and fast. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- On the about us page, we have a completition bar which completes as we scroll down the page. Make sure that the completion bar is not visible on the about us page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Remove the share this article section from the blogposts. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The css and the js is still not getting applied to the blogposts. Whenever i open any blogposts, the only thing i see is the html content. Fix this thing. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Remove the categories section from the blogposts. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, as you have written the blogposts for bubble-wrap-ulitmate guide and the sustainable-packaging-solutions, I want you to write the blogposts for the rest of the blogs mentioned in the blogs.html. The blogposts should be created in such a way that they are responsive and look good on all devices. Also the css of all the blogposts should be same from blogsposts.css and blogposts.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, Make a chatbot.html in the templates/shared and the chatbot.js and chatbot.css for it. The chatbot will be nothing but will include an option to choose from the set of hardcoded questions from hardcoded categories. The final reponse if the user gets anything not form the hardcoded reponses and questions will be to contact us information. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The scroll to top button is currently overlapping the chatbot. Make sure that the scroll to top button is not overlapping the chatbot. The scroll to top button should be visible only when the user scrolls down the page and it should not overlap with the chatbot. Also go through the rules.instructions.md after doing the tasks given to you. 
+
+- Chatbot is not visible on any of the pages of the website, nor it is loading. Make sure that the chatbot is visible on all the pages of the website and it is loading properly. The chatbot should be visible on all the pages of the website, including the homepage, products page, about us page, contact us page, blogs page, privacy policy page, terms and conditions page and refund policy page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- When i click on the chatbot widget, it is not opening at all, fix this thing for me. The chatbot should open when i click on the chatbot widget. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- These are the chatbot logs when i clik on teh chatbot widget: Chatbot: Active state changed to: false, chatbot.js:246 Chatbot: toggleChatbot called, isActive: true, chatbot.js:248 Chatbot: Chatbot element found: true, chatbot.js:252 Chatbot: Active state changed to: false. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- First of all, the chatbot is not working at all, fix the chatbot functionality. The chatbot should be able to open when we click on the chatbot widget. The chatbot should be able to show the hardcoded questions and answers. The chatbot should be able to close when we click on the close button. The chatbot should be able to show the hardcoded questions and answers in a proper way. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Chatbot: Chatbot window found: true chatbot.js:255 Chatbot: Active state changed to: false chatbot.js:256 Chatbot: Classes after toggle: chatbot I am getting this log when i click on the chatbot widget. Fix this thing for me. The chatbot should be able to open when we click on the chatbot widget. The chatbot should be able to show the hardcoded questions and answers. The chatbot should be able to close when we click on the close button. The chatbot should be able to show the hardcoded questions and answers in a proper way. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The inside fot eh chatbot is not workign fine, the UI?UX is alsoo not good. When ic lick on one of the categories, even the window to see the questions is cropped. Fix all this for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Increase the size of the chatbot window a little more. Make the chatbot window bigger so that it is visible properly. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- In the chatbot window, when the user clicks on a question, it is visible in the chat window with a green background, fix this thing for me. The background should be something light so that the text on it is visible. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, lets focus on the functionality of the chatbot. wheni choose any category before choosing questions in teh chqtbot window, Great! You selected "Our Products". Here are some common questions: VA Great! You selected "Our Products". Here are some common questions: this message appears twice, fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The icon appearing on the chatbot widget is not looking good at all. Choose a professional and good looking icon for the chatbot widget. The icon should be a chat icon and it should be visible properly. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- After every answer in the chatbot, i am getting the contact us message. It should not be the case, right? if not, then fix this for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The active tab is not getting highlighted in the navbar. Make sure that the active tab is getting highlighted in the navbar. The active tab should be highlighted based on the page that the user is currently on. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The chatbot widget as whole and the scroll to top button along with it together are not looking good. Make sure that the chatbot widget and the scroll to top button are looking good together. The chatbot widget should not overlap with the scroll to top button and vice versa. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- When i click on "bubble wrap" or "stretch films" in the our products section of the homepage, it is not working. I am not able to categorize based on the categories options available, fix htis thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The chatbot window, only the question category section in there, doesn't look same on all the pages of the website. It is different for homepage and for the contact page. Make sure that it looks same on all the pages as it looks on the contact page. The chatbot window should be consistent across all the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- When i open the chatbot window, the question categories should have some hovering effect. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The product categories both on the homepage and on the blogs page, each category button is taking the entire width of the webpage. Make sure that the product categories are not taking the entire width of the webpage and they are properly aligned. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now, the scroll to top button is not visible is the blogs page of the website. Make sure that the scroll to top button is visible on the blogs page of the website. The scroll to top button should be visible only when the user scrolls down the page and it should not overlap with the chatbot widget. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The scroll to top button is not visible on the blogs page of the website. This page should have the scroll to top button as we have on the homepage. It should not overlap with the chatbot widget. Files you can use: scroll-to-top.js, scroll-to-top.css, scroll-to-top.html. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- These are the scroll button logs: Showing scroll button blogs.html:144 Scroll position: 6192 blogs.html:148 Showing scroll button logs.html:144 Scroll position: 6193 blogs.html:148 Showing scroll button blogs.html:144 Scroll position: 6200 blogs.html:148 Showing scroll button blogs.html:144 Scroll position: 6209 blogs.html:148 Showing scroll button blogs.html:144 Scroll position: 6217.5 blogs.html:148 Showing scroll button but it is still not visible on the blogs page of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- I have a chatbot button on the bottom right of the website on all the pages, so the scroll to button is placed on left of it. You can look on the homepage for reference. Make sure that the blogs.html has the scroll to top button on the left of the chatbot widget. The scroll to top button should be visible only when the user scrolls down the page and it should not overlap with the chatbot widget. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- In the blogpost also, use the scroll-to-top.js, scroll-to-top.css and scroll-to-top.html files to make the scroll to top button work. The scroll to top button should be visible only when the user scrolls down the page and it should not overlap with the chatbot widget. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- In the blogs posts, the chat widget doesn't look same as that of the homepage. Also the chatbot window doesn't open upon clicking on the chatbot widget. Files you can look for is: blogposts.css, blogposts.js, templates-blogs.js. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- For all the blogposts, the chatbot widget is either not visible or it is not working properly. Make sure that the chatbot widget is visible on all the blogposts and it is working properly. Files you can use: blogposts.css, blogposts.js, templates-blogs.js, chatbot.js, chatbot.html, chatbot.css. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now lets take the blogs one by one. Add a working chatbot template to each blog post. lets go for this now cost-effective-packaging-strategies.html. Take reference from the blogpost: bubble-wrap-ultimate-guide.html. Files you can look for is: blogposts.css, blogposts.js, templates-blogs.js, chatbot.js, chatbot.html, chatbot.css, . Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now lets take the blogs one by one. Add a working chatbot template to each blog post. lets go for this now ecommerce-packaging-best-practices.html. Take reference from the blogpost: bubble-wrap-ultimate-guide.html. Files you can look for is: blogposts.css, blogposts.js, templates-blogs.js, chatbot.js, chatbot.html, chatbot.css, . Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now lets take the blogs one by one. Add a working chatbot template to each blog post. lets go for this now sustainable-packaging-solutions.html. Take reference from the blogpost: bubble-wrap-ultimate-guide.html. Files you can look for is: blogposts.css, blogposts.js, templates-blogs.js, chatbot.js, chatbot.html, chatbot.css, . Also go through the rules.instructions.md after doing the tasks given to you.
+
+- On the blogs page of the website, the scroll to top button is overlapping the chatbot widget. Make sure that the scroll to top button is not overlapping the chatbot widget on the blogs page. The scroll to top button should be visible only when the user scrolls down the page and it should not overlap with the chatbot widget. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Add the product images from the workspace to the products page. The product images should be added to the products page in a way that they are responsive and look good on all devices. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- I have added favicon.png in the workspace, add it to the website. The favicon should be visible on all the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The our story section on the about us page is not looking good. Make it look good and professional. The our story section should have a good background and the content should be properly aligned. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The our story section on the about us page looks very bad now. I should be minimilistic and simpel and professional and good looking. It should be consistent with the rest of the website. The our story section should have a good background and the content should be properly aligned. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Currently, we have demo data on the about us page. Replace that with the actual data from the vardhamanagencies.in.instructions.md. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Make this:Reasons behind our success in the packaging industry and this:Under the administration of experienced leadership center aligned on the about us page of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Currently, we have demo data on the contact us page. Replace that with the actual data from the vardhamanagencies.in.instructions.md. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- For the mobile phones view of the website, the scroll to top button is not appearing right next to the chatbot widget as it does in the desktop view. Fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The background of the our story section in teh about us page should be white following the alternative background color of the homepage. The content should be properly aligned and the text should be properly spaced out. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Footer of the website, The blue underline that we have for the headings is not at all looking good. Also the blue arrow which appears when i hover over any links on the footer is not looking good. Make it look good and professional. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Can we have the arrow to appear, soemthign like this:> upon hovering on the links on the footer. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The arrow which appears upon hovering on the links on the footer is not looking good. Make it look good and professional. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Remove anythhing to be appearing on the footer when i hover on the links. The links should just go sideways when i hover on them. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets first focus on bubble-wrap-ultimate-guide.html.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets now focus on cost-effective-packaging-strategies.html.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets now focus on ecommerce-packaging-best-practices.html.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets now focus on packaging-industry-trends-2025.html.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets now focus on packaging-recycling-disposal-guide.html.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets now focus on packaging-regulations-compliance-india.html.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets now focus on science-behind-bubble-wrap.html.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets now focus on stretch-film-vs-bubble-wrap.html.
+
+- Currenly, the blogposts that we have on the blogs.html are not seo optimized. I want you to make them seo optimzed with all the required schemas to be added to them. Lets now focus on sustainable-packaging-solutions.html.
+
+- Now, create a .htaccess file in the root directory of the website. The .htaccess file should contain the code for removing the .html from the end of the urls that we have. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Remove all the debugging console logs from the codebase. The console logs should not be present in the final codebase. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- From contact page, fix this error, contact.js:30 Uncaught TypeError: Cannot read properties of null (reading 'querySelector') at initializeContactForm (contact.js:30:28) at initializeContactPage (contact.js:12:5). Also go through the rules.instructions.md after doing the tasks given to you.
+
+- on the products page, we should have only two products, bubble wrap and stretch films. The products page should not have any other products. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The icon on the chatbot widget doesn't look good. Try different icons and comment them, so that i can manually try the different icons. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- When i uncomment the icons, i am not able to get different chatbot icon on the chatbot widget, fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Choose the best icon for the chatbot widget from the commented icons in the chatbot.js file. The icon should be a chat icon and it should be visible properly. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now change the icon on the chatbot widget. It is not changed on the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.

@@ -92,8 +92,8 @@
 }
 
 /* Company Story */
-.company-story {
-}
+/* .company-story {
+} */
 
 .hero-image-placeholder::after {
     content: '';
@@ -242,6 +242,19 @@
 .why-choose-us {
     padding: var(--spacing-3xl) 0;
     background-color: var(--background);
+}
+
+.why-choose-us .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.why-choose-us .section-title {
+    text-align: center;
+}
+
+.why-choose-us .section-description {
+    text-align: center;
 }
 
 .features-grid {
@@ -436,9 +449,44 @@
         height: 250px;
     }
     
+    /* Company Story Mobile Styles */
+    .company-story {
+        padding: 80px 0;
+    }
+    
     .story-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-2xl);
+        gap: var(--spacing-3xl);
+        text-align: center;
+    }
+    
+    .story-text {
+        text-align: center;
+    }
+    
+    .company-story .section-title {
+        font-size: 2.25rem;
+        text-align: center;
+    }
+    
+    .company-story .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .company-story .section-description {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .story-paragraphs {
+        margin-top: var(--spacing-lg);
+    }
+    
+    .story-paragraphs p {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-lg);
+        text-align: center;
     }
     
     .story-stats {
@@ -446,10 +494,20 @@
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
         padding: var(--spacing-xl);
+        margin-top: var(--spacing-xl);
     }
     
     .stat-item {
         margin-bottom: 0;
+        padding: var(--spacing-md);
+    }
+    
+    .stat-number {
+        font-size: 2.25rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
     }
     
     .mv-grid {
@@ -487,18 +545,35 @@
         padding: var(--spacing-xs) var(--spacing-md);
     }
     
+    /* Company Story Small Mobile Styles */
+    .company-story {
+        padding: 60px 0;
+    }
+    
+    .company-story .section-title {
+        font-size: 1.875rem;
+    }
+    
+    .company-story .section-description {
+        font-size: 0.95rem;
+    }
+    
     .story-stats {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+    
+    .stat-item {
+        padding: var(--spacing-sm);
     }
     
     .stat-number {
         font-size: 2rem;
     }
     
-    .mv-card,
-    .feature-card {
-        padding: var(--spacing-lg);
+    .stat-label {
+        font-size: 0.8rem;
     }
 }
 

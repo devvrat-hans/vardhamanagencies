@@ -92,11 +92,9 @@ class ProductSearch {
         this.searchClose = document.querySelector('.search-close');
 
         if (!this.searchModal || !this.searchInput || !this.searchResults || !this.searchToggle || !this.searchClose) {
-            console.log('Search elements not found, search functionality will retry...');
             return;
         }
 
-        console.log('Search functionality initialized successfully');
         this.bindEvents();
     }
 

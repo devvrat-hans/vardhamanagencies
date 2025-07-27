@@ -6,10 +6,17 @@
     <title>Blog - Vardhaman Agencies | Packaging Industry Insights & Tips</title>
     <meta name="description" content="Stay updated with the latest packaging industry trends, bubble wrap tips, and professional insights from Vardhaman Agencies experts.">
     <meta name="keywords" content="packaging blog, bubble wrap tips, industry insights, Vardhaman Agencies, packaging solutions">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo/favicon.png">
+    
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/cta.css">
+    <link rel="stylesheet" href="assets/css/scroll-to-top.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
     <link rel="stylesheet" href="assets/css/blogs.css">
     <link rel="stylesheet" href="assets/css/blogposts.css">
 </head>
@@ -72,23 +79,11 @@
                 <div class="blog-grid" id="blogGrid">
                     <!-- Blog posts will be loaded here dynamically -->
                 </div>
-                
-                <!-- Load More Button -->
-                <div class="blog-load-more">
-                    <button class="btn btn-outline" id="loadMoreBtn">
-                        <span>Load More Articles</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/>
-                        </svg>
-                    </button>
-                </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta" id="cta-placeholder">
-            <!-- CTA will be loaded here -->
-        </section>
+        <div id="cta-placeholder"></div>
     </main>
 
     <!-- Footer -->
@@ -96,20 +91,80 @@
         <!-- Footer will be loaded here -->
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+        </svg>
+    </button>
+
     <!-- Scripts -->
     <script src="assets/js/templates.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/footer.js"></script>
     <script src="assets/js/cta.js"></script>
+    <script src="assets/js/scroll-to-top.js"></script>
+    <script src="assets/js/chatbot.js"></script>
     <script src="assets/js/blogs.js"></script>
     <script src="assets/js/blogposts.js"></script>
 
     <script>
-        // Initialize page
+        // Initialize page exactly like homepage
         document.addEventListener('DOMContentLoaded', async function() {
-            await TemplateLoader.loadNavbar();
-            await TemplateLoader.loadFooter();
-            await TemplateLoader.loadCTA();
+            
+            // Load critical templates first
+            const criticalTemplates = [
+                TemplateLoader.loadNavbar()
+            ];
+            
+            // Load non-critical templates after critical ones
+            const nonCriticalTemplates = [
+                TemplateLoader.loadFooter(),
+                TemplateLoader.loadCTA(),
+                TemplateLoader.loadChatbot()
+            ];
+            
+            // Load critical templates immediately
+            await Promise.all(criticalTemplates);
+            
+            // Load non-critical templates with slight delay
+            setTimeout(() => {
+                Promise.all(nonCriticalTemplates);
+            }, 100);
+            
+            // Ensure scroll-to-top button functionality after all templates load
+            setTimeout(() => {
+                const scrollBtn = document.getElementById('scrollToTop');
+                
+                if (scrollBtn) {
+                    // Ensure it has the visible class initially hidden
+                    scrollBtn.classList.remove('visible');
+                    
+                    // Add scroll listener
+                    function handleScroll() {
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        
+                        if (scrollTop > 200) {
+                            scrollBtn.classList.add('visible');
+                        } else {
+                            scrollBtn.classList.remove('visible');
+                        }
+                    }
+                    
+                    // Click handler
+                    scrollBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                    
+                    // Add scroll listener
+                    window.addEventListener('scroll', handleScroll, { passive: true });
+                    handleScroll(); // Initial check
+                }
+            }, 500);
         });
     </script>
 </body>

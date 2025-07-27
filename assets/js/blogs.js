@@ -2,8 +2,6 @@
 class BlogManager {
     constructor() {
         this.currentCategory = 'all';
-        this.displayedPosts = 6;
-        this.postsPerLoad = 6;
         this.allPosts = [];
         this.filteredPosts = [];
         
@@ -14,6 +12,9 @@ class BlogManager {
         await this.loadBlogPosts();
         this.setupEventListeners();
         this.displayPosts();
+        
+        // Ensure scroll-to-top button is working
+        this.initScrollToTop();
     }
     
     async loadBlogPosts() {
@@ -22,7 +23,6 @@ class BlogManager {
             this.allPosts = await BlogPostLoader.loadAllPosts();
             this.filteredPosts = [...this.allPosts];
         } catch (error) {
-            console.error('Error loading blog posts:', error);
             this.showNoPosts('Failed to load blog posts. Please try again later.');
         }
     }
@@ -35,14 +35,6 @@ class BlogManager {
                 this.handleCategoryFilter(e.target.dataset.category);
             });
         });
-        
-        // Load more button
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        if (loadMoreBtn) {
-            loadMoreBtn.addEventListener('click', () => {
-                this.loadMorePosts();
-            });
-        }
     }
     
     handleCategoryFilter(category) {
@@ -62,14 +54,12 @@ class BlogManager {
             );
         }
         
-        // Reset display count and show posts
-        this.displayedPosts = this.postsPerLoad;
+        // Display all posts
         this.displayPosts();
     }
     
     displayPosts() {
         const blogGrid = document.getElementById('blogGrid');
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
         
         if (!blogGrid) return;
         
@@ -81,21 +71,11 @@ class BlogManager {
         // Clear existing posts
         blogGrid.innerHTML = '';
         
-        // Display posts up to current limit
-        const postsToShow = this.filteredPosts.slice(0, this.displayedPosts);
-        postsToShow.forEach((post, index) => {
+        // Display all filtered posts
+        this.filteredPosts.forEach((post, index) => {
             const postElement = this.createPostElement(post, index === 0 && this.currentCategory === 'all');
             blogGrid.appendChild(postElement);
         });
-        
-        // Show/hide load more button
-        if (loadMoreBtn) {
-            if (this.displayedPosts >= this.filteredPosts.length) {
-                loadMoreBtn.style.display = 'none';
-            } else {
-                loadMoreBtn.style.display = 'inline-flex';
-            }
-        }
     }
     
     createPostElement(post, isFeatured = false) {
@@ -158,14 +138,8 @@ class BlogManager {
         return article;
     }
     
-    loadMorePosts() {
-        this.displayedPosts += this.postsPerLoad;
-        this.displayPosts();
-    }
-    
     showNoPosts(message = null) {
         const blogGrid = document.getElementById('blogGrid');
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
         
         if (!blogGrid) return;
         
@@ -182,10 +156,6 @@ class BlogManager {
                 <p>${message || defaultMessage}</p>
             </div>
         `;
-        
-        if (loadMoreBtn) {
-            loadMoreBtn.style.display = 'none';
-        }
     }
     
     showNotification(message, type = 'info') {
@@ -256,6 +226,66 @@ class BlogManager {
             month: 'long',
             day: 'numeric'
         });
+    }
+    
+    initScrollToTop() {
+        // Ensure scroll-to-top button is visible and working
+        setTimeout(() => {
+            // Force initialize scroll-to-top functionality
+            if (typeof window.ScrollToTop !== 'undefined') {
+                if (!window.scrollToTopInstance) {
+                    window.scrollToTopInstance = new window.ScrollToTop();
+                } else {
+                    window.scrollToTopInstance.refresh();
+                }
+            }
+            
+            // Backup: Create button manually if it doesn't exist
+            setTimeout(() => {
+                if (!document.getElementById('scrollToTop')) {
+                    this.createScrollToTopButton();
+                }
+            }, 500);
+        }, 500);
+    }
+    
+    createScrollToTopButton() {
+        const button = document.createElement('button');
+        button.id = 'scrollToTop';
+        button.className = 'scroll-to-top';
+        button.setAttribute('aria-label', 'Scroll to top');
+        button.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+            </svg>
+        `;
+        
+        document.body.appendChild(button);
+        
+        // Add functionality
+        this.addScrollToTopFunctionality(button);
+    }
+    
+    addScrollToTopFunctionality(button) {
+        // Click handler
+        button.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Show/hide based on scroll position
+        const handleScroll = () => {
+            if (window.pageYOffset > 200) {
+                button.classList.add('visible');
+            } else {
+                button.classList.remove('visible');
+            }
+        };
+        
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Initial check
     }
 }
 
