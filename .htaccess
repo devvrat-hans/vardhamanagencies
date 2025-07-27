@@ -57,6 +57,9 @@ Redirect 301 /home.html /
 Redirect 301 /index /
 Redirect 301 /index.html /
 
+# Handle directory access for blogs
+RewriteRule ^blogs/$ /blogs [R=301,L]
+
 # Force HTTPS (uncomment if SSL is configured)
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
