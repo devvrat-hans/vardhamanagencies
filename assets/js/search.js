@@ -7,7 +7,7 @@ class ProductSearch {
                 id: 1,
                 name: "Bubble Wrap Rolls",
                 description: "High-quality bubble wrap for safe packaging and protection",
-                image: "assets/images/products/bubble-warp-rolls.png",
+                image: "/assets/images/products/bubble-warp-rolls.png",
                 category: "bubble-wrap",
                 keywords: ["bubble", "wrap", "protection", "packaging", "air", "cushioning"]
             },
@@ -15,7 +15,7 @@ class ProductSearch {
                 id: 2,
                 name: "Stretch Film",
                 description: "Durable stretch film for secure packaging and palletizing",
-                image: "assets/images/products/strech-film.png",
+                image: "/assets/images/products/strech-film.png",
                 category: "stretch-film",
                 keywords: ["stretch", "film", "wrap", "pallet", "secure", "packaging"]
             },
@@ -23,7 +23,7 @@ class ProductSearch {
                 id: 3,
                 name: "Small Bubble Wrap",
                 description: "Small bubble size for delicate item protection",
-                image: "assets/images/products/bubble-warp-rolls.png",
+                image: "/assets/images/products/bubble-warp-rolls.png",
                 category: "bubble-wrap",
                 keywords: ["small", "bubble", "delicate", "protection", "packaging"]
             },
@@ -31,7 +31,7 @@ class ProductSearch {
                 id: 4,
                 name: "Large Bubble Wrap",
                 description: "Large bubble size for maximum cushioning protection",
-                image: "assets/images/products/bubble-warp-rolls.png",
+                image: "/assets/images/products/bubble-warp-rolls.png",
                 category: "bubble-wrap",
                 keywords: ["large", "bubble", "cushioning", "protection", "heavy", "items"]
             },
@@ -39,7 +39,7 @@ class ProductSearch {
                 id: 5,
                 name: "Clear Stretch Film",
                 description: "Transparent stretch film for visible content identification",
-                image: "assets/images/products/strech-film.png",
+                image: "/assets/images/products/strech-film.png",
                 category: "stretch-film",
                 keywords: ["clear", "transparent", "stretch", "film", "visible", "packaging"]
             },
@@ -47,7 +47,7 @@ class ProductSearch {
                 id: 6,
                 name: "Colored Stretch Film",
                 description: "Colored stretch film for color-coded packaging systems",
-                image: "assets/images/products/strech-film.png",
+                image: "/assets/images/products/strech-film.png",
                 category: "stretch-film",
                 keywords: ["colored", "color", "stretch", "film", "coding", "identification"]
             }

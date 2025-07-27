@@ -443,7 +443,7 @@ class Chatbot {
 class ChatbotLoader {
     static async loadChatbot() {
         try {
-            const response = await fetch(`assets/templates/shared/chatbot.html?v=${Date.now()}`);
+            const response = await fetch(`/assets/templates/shared/chatbot.html?v=${Date.now()}`);
             const chatbotHTML = await response.text();
             
             // Check if there's a specific placeholder for chatbot

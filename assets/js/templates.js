@@ -16,7 +16,7 @@ class TemplateLoader {
     }
     
     static async loadNavbar() {
-        await this.loadTemplate('assets/templates/shared/navbar.html', '#header');
+        await this.loadTemplate('/assets/templates/shared/navbar.html', '#header');
         
         // Wait a bit for DOM to be fully updated
         setTimeout(() => {
@@ -29,17 +29,17 @@ class TemplateLoader {
     }
     
     static async loadFooter() {
-        await this.loadTemplate('assets/templates/shared/footer.html', '#footer');
+        await this.loadTemplate('/assets/templates/shared/footer.html', '#footer');
     }
     
     static async loadCTA() {
-        await this.loadTemplate('assets/templates/shared/cta.html', '#cta-placeholder');
+        await this.loadTemplate('/assets/templates/shared/cta.html', '#cta-placeholder');
     }
     
     static async loadScrollToTop() {
         // Load the scroll-to-top button into the body
         try {
-            const response = await fetch('assets/templates/shared/scroll-to-top.html');
+            const response = await fetch('/assets/templates/shared/scroll-to-top.html');
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
@@ -59,7 +59,7 @@ class TemplateLoader {
     static async loadChatbot() {
         // Load the chatbot into the body
         try {
-            const response = await fetch(`assets/templates/shared/chatbot.html?v=${Date.now()}`);
+            const response = await fetch(`/assets/templates/shared/chatbot.html?v=${Date.now()}`);
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
