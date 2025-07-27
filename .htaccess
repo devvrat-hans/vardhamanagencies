@@ -1,19 +1,30 @@
 # Remove .html extension from URLs
 RewriteEngine On
 
-# Remove trailing slash (redirect /page/ to /page)
+# Handle root redirects first
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^home\.html$ / [R=301,L]
+RewriteRule ^home/?$ / [R=301,L]
+
+# Remove trailing slash (redirect /page/ to /page) - but not for directories that actually exist
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteCond %{REQUEST_URI} !^/$
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # Remove .html extension from URL (redirect /page.html to /page)
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1 [NC,L,R=301]
+RewriteCond %{THE_REQUEST} \s+/+([^.\s?]*?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Special handling for blogs directory
+RewriteRule ^blogs/$ /blogs.html [L]
 
 # Add .html extension internally (when accessing /page, serve /page.html)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^.]+)$ $1.html [L]
+RewriteCond %{REQUEST_URI} !^/[^/]*\.[^/]+$
+RewriteCond %{REQUEST_URI} !^/blogs/
+RewriteRule ^([^./]+)/?$ $1.html [L]
 
 # Security: Block access to sensitive files
 <Files ~ "\.(htaccess|htpasswd|ini|log|sh|sql|conf)$">
@@ -55,10 +66,9 @@ Options -Indexes
 Redirect 301 /home /
 Redirect 301 /home.html /
 Redirect 301 /index /
-Redirect 301 /index.html /
 
-# Handle directory access for blogs
-RewriteRule ^blogs/$ /blogs [R=301,L]
+# Remove the problematic blogs redirect that was causing issues
+# RewriteRule ^blogs/$ /blogs [R=301,L]
 
 # Force HTTPS (uncomment if SSL is configured)
 # RewriteCond %{HTTPS} off
