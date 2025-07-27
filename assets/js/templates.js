@@ -17,12 +17,22 @@ class TemplateLoader {
     }
     
     static async loadNavbar() {
-        await this.loadTemplate('/assets/templates/shared/navbar.html', '#header');
+        // Determine the correct path based on current directory
+        const currentPath = window.location.pathname;
+        const isInSubdirectory = currentPath.includes('/blogs/');
+        const templatePath = isInSubdirectory ? '../assets/templates/shared/navbar.html' : '/assets/templates/shared/navbar.html';
+        
+        await this.loadTemplate(templatePath, '#header');
         
         // Wait a bit for DOM to be fully updated
         setTimeout(() => {
             // Update active nav link based on current page
             this.updateActiveNavLink();
+            
+            // Update navbar links for subdirectory if needed
+            if (isInSubdirectory) {
+                this.updateNavbarForSubdirectory();
+            }
             
             // Dispatch custom event to notify that navbar is loaded
             document.dispatchEvent(new CustomEvent('navbarLoaded'));
@@ -30,18 +40,10 @@ class TemplateLoader {
     }
     
     static async loadFooter() {
-        await this.loadTemplate('/assets/templates/shared/footer.html', '#footer');
-    }
-    
-    static async loadCTA() {
-        await this.loadTemplate('/assets/templates/shared/cta.html', '#cta-placeholder');
-    }
-    
-    static async loadFooter() {
         // Determine the correct path based on current directory
         const currentPath = window.location.pathname;
         const isInSubdirectory = currentPath.includes('/blogs/');
-        const templatePath = isInSubdirectory ? '../assets/templates/shared/footer.html' : './assets/templates/shared/footer.html';
+        const templatePath = isInSubdirectory ? '../assets/templates/shared/footer.html' : '/assets/templates/shared/footer.html';
         
         await this.loadTemplate(templatePath, '#footer');
         
@@ -52,7 +54,11 @@ class TemplateLoader {
     }
     
     static async loadCTA() {
-        await this.loadTemplate('./assets/templates/shared/cta.html', '#cta-placeholder');
+        const currentPath = window.location.pathname;
+        const isInSubdirectory = currentPath.includes('/blogs/');
+        const templatePath = isInSubdirectory ? '../assets/templates/shared/cta.html' : '/assets/templates/shared/cta.html';
+        
+        await this.loadTemplate(templatePath, '#cta-placeholder');
     }
     
     static async loadScrollToTop() {
@@ -98,27 +104,27 @@ class TemplateLoader {
     }
     
     static updateActiveNavLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-link');
-        
         
         navLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
             
-            // Extract filename from href (remove leading slash)
-            const linkPage = href.replace(/^\//, '');
-            
-            // Check for exact match
-            if (linkPage === currentPage) {
+            // Handle different page matches
+            if (href === currentPage) {
                 link.classList.add('active');
             }
-            // Check for index page (empty path or index.html)
-            else if ((currentPage === '' || currentPage === 'index.html') && (linkPage === 'index.html' || linkPage === '')) {
+            // Handle root/home page
+            else if ((currentPage === '/' || currentPage === '/index' || currentPage === '/index.html') && href === '/') {
                 link.classList.add('active');
             }
-            // Check for blogs page and blog posts
-            else if (currentPage.includes('blog') && linkPage === 'blogs.html') {
+            // Handle blogs page and blog posts
+            else if ((currentPage === '/blogs' || currentPage === '/blogs.html' || currentPage.includes('/blogs/')) && href === '/blogs') {
+                link.classList.add('active');
+            }
+            // Handle other pages
+            else if (currentPage.includes(href.replace('/', '')) && href !== '/') {
                 link.classList.add('active');
             }
         });

@@ -306,8 +306,9 @@
 
 - on this link, i am getting the error that "This page isn’t working vardhamanagencies.in redirected you too many times" fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
 
+- Still on the deployed website, the navbar and the footer are not visible on the blogs page. Fix this for me. The navbar and the footer should be visible on all the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
 
-
+On the deployed website, navbar and footer are not visible also on the homepage of the website. Fix this for me. The navbar and the footer should be visible on all the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
 
 
 

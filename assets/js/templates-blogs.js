@@ -81,32 +81,32 @@ class TemplateBlogLoader {
             link.classList.remove('active');
             const href = link.getAttribute('href');
             // For blog posts, highlight the blog nav link
-            if (href === '/blogs.html' || href === '../blogs.html') {
+            if (href === '/blogs' || href === '/blogs.html' || href === '../blogs.html') {
                 link.classList.add('active');
             }
         });
     }
     
     static async loadAllTemplates() {
-        // Load critical templates first (navbar, chatbot, and scroll-to-top for immediate functionality)
+        // Load critical templates first (navbar, footer for immediate functionality)
         const criticalTemplates = [
             this.loadNavbar(),
-            this.loadChatbot(),
-            this.loadScrollToTop()
+            this.loadFooter()
         ];
         
         // Load non-critical templates after critical ones
         const nonCriticalTemplates = [
-            this.loadFooter(),
-            this.loadCTA()
+            this.loadCTA(),
+            this.loadScrollToTop(),
+            this.loadChatbot()
         ];
         
         // Load critical templates immediately
         await Promise.all(criticalTemplates);
         
         // Load non-critical templates with slight delay
-        setTimeout(() => {
-            Promise.all(nonCriticalTemplates);
+        setTimeout(async () => {
+            await Promise.all(nonCriticalTemplates);
         }, 100);
     }
     

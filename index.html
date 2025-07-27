@@ -503,21 +503,22 @@
             // Load critical templates first
             const criticalTemplates = [
                 TemplateLoader.loadNavbar(),
-                TemplateLoader.loadScrollToTop()
+                TemplateLoader.loadFooter()
             ];
             
             // Load non-critical templates after critical ones
             const nonCriticalTemplates = [
-                TemplateLoader.loadFooter(),
-                TemplateLoader.loadCTA()
+                TemplateLoader.loadCTA(),
+                TemplateLoader.loadScrollToTop(),
+                TemplateLoader.loadChatbot()
             ];
             
             // Load critical templates immediately
             await Promise.all(criticalTemplates);
             
             // Load non-critical templates with slight delay
-            setTimeout(() => {
-                Promise.all(nonCriticalTemplates);
+            setTimeout(async () => {
+                await Promise.all(nonCriticalTemplates);
             }, 100);
         });
     </script>

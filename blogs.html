@@ -92,12 +92,6 @@
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
-        </svg>
-    </button>
-
     <!-- Scripts -->
     <script src="/assets/js/templates.js"></script>
     <script src="/assets/js/navbar.js"></script>
@@ -114,13 +108,14 @@
             
             // Load critical templates first
             const criticalTemplates = [
-                TemplateLoader.loadNavbar()
+                TemplateLoader.loadNavbar(),
+                TemplateLoader.loadFooter()
             ];
             
             // Load non-critical templates after critical ones
             const nonCriticalTemplates = [
-                TemplateLoader.loadFooter(),
                 TemplateLoader.loadCTA(),
+                TemplateLoader.loadScrollToTop(),
                 TemplateLoader.loadChatbot()
             ];
             
@@ -128,42 +123,14 @@
             await Promise.all(criticalTemplates);
             
             // Load non-critical templates with slight delay
-            setTimeout(() => {
-                Promise.all(nonCriticalTemplates);
+            setTimeout(async () => {
+                await Promise.all(nonCriticalTemplates);
             }, 100);
             
             // Ensure scroll-to-top button functionality after all templates load
             setTimeout(() => {
-                const scrollBtn = document.getElementById('scrollToTop');
-                
-                if (scrollBtn) {
-                    // Ensure it has the visible class initially hidden
-                    scrollBtn.classList.remove('visible');
-                    
-                    // Add scroll listener
-                    function handleScroll() {
-                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        if (scrollTop > 200) {
-                            scrollBtn.classList.add('visible');
-                        } else {
-                            scrollBtn.classList.remove('visible');
-                        }
-                    }
-                    
-                    // Click handler
-                    scrollBtn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    });
-                    
-                    // Add scroll listener
-                    window.addEventListener('scroll', handleScroll, { passive: true });
-                    handleScroll(); // Initial check
-                }
+                // The scroll-to-top functionality is now handled by scroll-to-top.js
+                // This ensures the button is properly initialized after template loading
             }, 500);
         });
     </script>
