@@ -17,6 +17,10 @@ class TemplateBlogLoader {
     
     static async loadNavbar() {
         await this.loadTemplate('../assets/templates/shared/navbar.html', '#header');
+        
+        // Update navigation links for subdirectory
+        this.updateNavbarForSubdirectory();
+        
         // Update active nav link based on current page
         this.updateActiveNavLink();
         
@@ -26,6 +30,9 @@ class TemplateBlogLoader {
     
     static async loadFooter() {
         await this.loadTemplate('../assets/templates/shared/footer.html', '#footer');
+        
+        // Update footer links for subdirectory
+        this.updateFooterForSubdirectory();
     }
     
     static async loadCTA() {
@@ -79,7 +86,7 @@ class TemplateBlogLoader {
             link.classList.remove('active');
             const href = link.getAttribute('href');
             // For blog posts, highlight the blog nav link
-            if (href === 'blogs.html' || href === '../blogs.html') {
+            if (href === '/blogs.html' || href === '../blogs.html') {
                 link.classList.add('active');
             }
         });
@@ -111,6 +118,40 @@ class TemplateBlogLoader {
     static initScrollToTop() {
         // This method is now handled by scroll-to-top.js
         // Kept for backward compatibility
+    }
+    
+    static updateNavbarForSubdirectory() {
+        // Update all navigation links for subdirectory pages
+        const navLinks = document.querySelectorAll('nav a[href^="./"]');
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('./')) {
+                link.setAttribute('href', '../' + href.substring(2));
+            }
+        });
+        
+        // Update logo link
+        const logoLink = document.querySelector('.header__logo');
+        if (logoLink && logoLink.getAttribute('href') === './index.html') {
+            logoLink.setAttribute('href', '../index.html');
+        }
+        
+        // Update logo image src
+        const logoImg = document.querySelector('.header__logo img');
+        if (logoImg && logoImg.src.includes('./assets/')) {
+            logoImg.src = logoImg.src.replace('./assets/', '../assets/');
+        }
+    }
+    
+    static updateFooterForSubdirectory() {
+        // Update all footer links for subdirectory pages
+        const footerLinks = document.querySelectorAll('footer a[href^="./"]');
+        footerLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('./')) {
+                link.setAttribute('href', '../' + href.substring(2));
+            }
+        });
     }
 }
 

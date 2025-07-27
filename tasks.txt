@@ -297,3 +297,5 @@
 - Now change the icon on the chatbot widget. It is not changed on the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
 
 When i open the deployed website and then click on any page from the navbar, for example the products page, i get a page with no css or js applied to it, and this is true for all the pages, why is this happening. Fix this for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+NOw, on the deployed website, the navbar and the footer are not visible expect on the index.html. Fix this for me. The navbar and the footer should be visible on all the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.

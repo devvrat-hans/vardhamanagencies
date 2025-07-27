@@ -16,7 +16,17 @@ class TemplateLoader {
     }
     
     static async loadNavbar() {
-        await this.loadTemplate('/assets/templates/shared/navbar.html', '#header');
+        // Determine the correct path based on current directory
+        const currentPath = window.location.pathname;
+        const isInSubdirectory = currentPath.includes('/blogs/');
+        const templatePath = isInSubdirectory ? '../assets/templates/shared/navbar.html' : './assets/templates/shared/navbar.html';
+        
+        await this.loadTemplate(templatePath, '#header');
+        
+        // Update navigation links based on current directory
+        if (isInSubdirectory) {
+            this.updateNavbarForSubdirectory();
+        }
         
         // Wait a bit for DOM to be fully updated
         setTimeout(() => {
@@ -29,17 +39,27 @@ class TemplateLoader {
     }
     
     static async loadFooter() {
-        await this.loadTemplate('/assets/templates/shared/footer.html', '#footer');
+        // Determine the correct path based on current directory
+        const currentPath = window.location.pathname;
+        const isInSubdirectory = currentPath.includes('/blogs/');
+        const templatePath = isInSubdirectory ? '../assets/templates/shared/footer.html' : './assets/templates/shared/footer.html';
+        
+        await this.loadTemplate(templatePath, '#footer');
+        
+        // Update footer links based on current directory
+        if (isInSubdirectory) {
+            this.updateFooterForSubdirectory();
+        }
     }
     
     static async loadCTA() {
-        await this.loadTemplate('/assets/templates/shared/cta.html', '#cta-placeholder');
+        await this.loadTemplate('./assets/templates/shared/cta.html', '#cta-placeholder');
     }
     
     static async loadScrollToTop() {
         // Load the scroll-to-top button into the body
         try {
-            const response = await fetch('/assets/templates/shared/scroll-to-top.html');
+            const response = await fetch('./assets/templates/shared/scroll-to-top.html');
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
@@ -59,7 +79,7 @@ class TemplateLoader {
     static async loadChatbot() {
         // Load the chatbot into the body
         try {
-            const response = await fetch(`/assets/templates/shared/chatbot.html?v=${Date.now()}`);
+            const response = await fetch(`./assets/templates/shared/chatbot.html?v=${Date.now()}`);
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
@@ -85,8 +105,8 @@ class TemplateLoader {
             link.classList.remove('active');
             const href = link.getAttribute('href');
             
-            // Extract filename from href (remove ../ prefix)
-            const linkPage = href.replace('../', '').replace('./', '');
+            // Extract filename from href (remove leading slash)
+            const linkPage = href.replace(/^\//, '');
             
             // Check for exact match
             if (linkPage === currentPage) {
@@ -102,13 +122,43 @@ class TemplateLoader {
             }
         });
     }
+    
+    static updateNavbarForSubdirectory() {
+        // Update all navigation links for subdirectory pages
+        const navLinks = document.querySelectorAll('nav a[href^="./"]');
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('./')) {
+                link.setAttribute('href', '../' + href.substring(2));
+            }
+        });
+        
+        // Update logo link
+        const logoLink = document.querySelector('.header__logo');
+        if (logoLink && logoLink.getAttribute('href') === './index.html') {
+            logoLink.setAttribute('href', '../index.html');
+        }
+        
+        // Update logo image src
+        const logoImg = document.querySelector('.header__logo img');
+        if (logoImg && logoImg.src.includes('./assets/')) {
+            logoImg.src = logoImg.src.replace('./assets/', '../assets/');
+        }
+    }
+    
+    static updateFooterForSubdirectory() {
+        // Update all footer links for subdirectory pages
+        const footerLinks = document.querySelectorAll('footer a[href^="./"]');
+        footerLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('./')) {
+                link.setAttribute('href', '../' + href.substring(2));
+            }
+        });
+    }
 }
 
-// Initialize templates when DOM is loaded
-document.addEventListener('DOMContentLoaded', async () => {
-    await TemplateLoader.loadNavbar();
-    await TemplateLoader.loadCTA();
-    await TemplateLoader.loadFooter();
-    await TemplateLoader.loadScrollToTop();
-    await TemplateLoader.loadChatbot();
-});
+// Export TemplateLoader for use in other modules
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = TemplateLoader;
+}
