@@ -1,24 +1,19 @@
 # Remove .html extension from URLs
 RewriteEngine On
 
-# Add trailing slash if missing
-RewriteCond %{REQUEST_FILENAME} !-f
+# Remove trailing slash (redirect /page/ to /page)
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*)$ $1/ [R=301,L]
-
-# Remove .html extension from URL
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1/ [NC,L,R=301]
-
-# Add .html extension internally
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^.]+)/$ $1.html [L]
-
-# Remove trailing slash from files
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# Remove .html extension from URL (redirect /page.html to /page)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Add .html extension internally (when accessing /page, serve /page.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^.]+)$ $1.html [L]
 
 # Security: Block access to sensitive files
 <Files ~ "\.(htaccess|htpasswd|ini|log|sh|sql|conf)$">
@@ -60,6 +55,7 @@ Options -Indexes
 Redirect 301 /home /
 Redirect 301 /home.html /
 Redirect 301 /index /
+Redirect 301 /index.html /
 
 # Force HTTPS (uncomment if SSL is configured)
 # RewriteCond %{HTTPS} off

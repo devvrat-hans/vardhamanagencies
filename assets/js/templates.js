@@ -12,6 +12,7 @@ class TemplateLoader {
                 element.innerHTML = html;
             }
         } catch (error) {
+            console.error('Template loading error:', error);
         }
     }
     
