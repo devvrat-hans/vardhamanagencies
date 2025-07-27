@@ -17,17 +17,7 @@ class TemplateLoader {
     }
     
     static async loadNavbar() {
-        // Determine the correct path based on current directory
-        const currentPath = window.location.pathname;
-        const isInSubdirectory = currentPath.includes('/blogs/');
-        const templatePath = isInSubdirectory ? '../assets/templates/shared/navbar.html' : './assets/templates/shared/navbar.html';
-        
-        await this.loadTemplate(templatePath, '#header');
-        
-        // Update navigation links based on current directory
-        if (isInSubdirectory) {
-            this.updateNavbarForSubdirectory();
-        }
+        await this.loadTemplate('/assets/templates/shared/navbar.html', '#header');
         
         // Wait a bit for DOM to be fully updated
         setTimeout(() => {
@@ -37,6 +27,14 @@ class TemplateLoader {
             // Dispatch custom event to notify that navbar is loaded
             document.dispatchEvent(new CustomEvent('navbarLoaded'));
         }, 100);
+    }
+    
+    static async loadFooter() {
+        await this.loadTemplate('/assets/templates/shared/footer.html', '#footer');
+    }
+    
+    static async loadCTA() {
+        await this.loadTemplate('/assets/templates/shared/cta.html', '#cta-placeholder');
     }
     
     static async loadFooter() {
@@ -60,7 +58,7 @@ class TemplateLoader {
     static async loadScrollToTop() {
         // Load the scroll-to-top button into the body
         try {
-            const response = await fetch('./assets/templates/shared/scroll-to-top.html');
+            const response = await fetch('/assets/templates/shared/scroll-to-top.html');
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
@@ -74,13 +72,14 @@ class TemplateLoader {
                 }));
             }
         } catch (error) {
+            console.error('ScrollToTop loading error:', error);
         }
     }
     
     static async loadChatbot() {
         // Load the chatbot into the body
         try {
-            const response = await fetch(`./assets/templates/shared/chatbot.html?v=${Date.now()}`);
+            const response = await fetch(`/assets/templates/shared/chatbot.html?v=${Date.now()}`);
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
@@ -94,6 +93,7 @@ class TemplateLoader {
                 }));
             }
         } catch (error) {
+            console.error('Chatbot loading error:', error);
         }
     }
     

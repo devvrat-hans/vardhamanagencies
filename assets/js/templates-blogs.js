@@ -16,10 +16,7 @@ class TemplateBlogLoader {
     }
     
     static async loadNavbar() {
-        await this.loadTemplate('../assets/templates/shared/navbar.html', '#header');
-        
-        // Update navigation links for subdirectory
-        this.updateNavbarForSubdirectory();
+        await this.loadTemplate('/assets/templates/shared/navbar.html', '#header');
         
         // Update active nav link based on current page
         this.updateActiveNavLink();
@@ -29,19 +26,16 @@ class TemplateBlogLoader {
     }
     
     static async loadFooter() {
-        await this.loadTemplate('../assets/templates/shared/footer.html', '#footer');
-        
-        // Update footer links for subdirectory
-        this.updateFooterForSubdirectory();
+        await this.loadTemplate('/assets/templates/shared/footer.html', '#footer');
     }
     
     static async loadCTA() {
-        await this.loadTemplate('../assets/templates/shared/cta.html', '#cta-placeholder');
+        await this.loadTemplate('/assets/templates/shared/cta.html', '#cta-placeholder');
     }
     
     static async loadScrollToTop() {
         try {
-            const response = await fetch('../assets/templates/shared/scroll-to-top.html');
+            const response = await fetch('/assets/templates/shared/scroll-to-top.html');
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
@@ -55,12 +49,13 @@ class TemplateBlogLoader {
                 }));
             }
         } catch (error) {
+            console.error('ScrollToTop loading error:', error);
         }
     }
     
     static async loadChatbot() {
         try {
-            const response = await fetch('../assets/templates/shared/chatbot.html');
+            const response = await fetch('/assets/templates/shared/chatbot.html');
             if (response.ok) {
                 const html = await response.text();
                 // Only add if not already present
