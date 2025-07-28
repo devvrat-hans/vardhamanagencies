@@ -314,6 +314,24 @@
 
 the search functionality is not working on the deployed website. make sure that the search functionality is working on the deployed website. When i click on the search button in the navbar, nothing appears, fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
 
+This is the console, when i open the deployed website. templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/navbar 404 (Not Found)
+loadTemplate @ templates.js:39
+loadNavbar @ templates.js:63
+(anonymous) @ about:257
+(anonymous) @ about:265Understand this error
+templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/footer 404 (Not Found)
+loadTemplate @ templates.js:39
+loadFooter @ templates.js:130
+(anonymous) @ about:258
+(anonymous) @ about:265Understand this error
+templates.js:218  GET https://vardhamanagencies.in/assets/templates/shared/scroll-to-top 404 (Not Found)
+loadScrollToTop @ templates.js:218
+(anonymous) @ about:262
+Promise.then
+(anonymous) @ about:259
+(anonymous) @ about:265Understand this error
+templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/cta 404 (Not Found)
+
 On the deployed website, the active tab is not getting highlighted in the navbar. Make sure that the active tab is getting highlighted in the navbar on the deployed website. The active tab should be highlighted based on the page that the user is currently on. Also go through the rules.instructions.md after doing the tasks given to you.
 
 On the deployed website, when i go to the blog page, both the home and the blog gets highlighed on the navbar. Fix this thing for me. The active tab should be highlighted based on the page that the user is currently on. Also go through the rules.instructions.md after doing the tasks given to you.

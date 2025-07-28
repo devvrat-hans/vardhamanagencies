@@ -68,13 +68,39 @@ class ProductSearch {
         
         // Listen for navbar loaded event
         document.addEventListener('navbarLoaded', () => {
-            this.setupElements();
+            setTimeout(() => {
+                this.setupElements();
+            }, 100);
         });
         
         // Also listen for DOMContentLoaded as fallback
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.trySetupElements());
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(() => {
+                    this.trySetupElements();
+                }, 100);
+            });
+        } else {
+            setTimeout(() => {
+                this.trySetupElements();
+            }, 100);
         }
+        
+        // Additional retry mechanism for deployed sites
+        let retryCount = 0;
+        const maxRetries = 10;
+        const retryInterval = setInterval(() => {
+            retryCount++;
+            if (retryCount >= maxRetries) {
+                clearInterval(retryInterval);
+                return;
+            }
+            
+            if (!this.searchModal && document.getElementById('searchModal')) {
+                this.setupElements();
+                clearInterval(retryInterval);
+            }
+        }, 200);
     }
 
     trySetupElements() {
@@ -91,11 +117,30 @@ class ProductSearch {
         this.searchToggle = document.querySelector('.search-toggle');
         this.searchClose = document.querySelector('.search-close');
 
-        if (!this.searchModal || !this.searchInput || !this.searchResults || !this.searchToggle || !this.searchClose) {
-            return;
-        }
+        // Check if all elements are found
+        const elementsFound = {
+            searchModal: !!this.searchModal,
+            searchInput: !!this.searchInput,
+            searchResults: !!this.searchResults,
+            searchToggle: !!this.searchToggle,
+            searchClose: !!this.searchClose
+        };
 
-        this.bindEvents();
+        // Only bind events if all required elements are present
+        if (Object.values(elementsFound).every(found => found)) {
+            this.bindEvents();
+            // Initialize with placeholder content
+            this.showPlaceholder();
+        } else {
+            // Log missing elements for debugging
+            const missingElements = Object.entries(elementsFound)
+                .filter(([, found]) => !found)
+                .map(([element]) => element);
+            
+            if (missingElements.length > 0) {
+                console.warn('Search: Missing elements:', missingElements.join(', '));
+            }
+        }
     }
 
     bindEvents() {
@@ -216,9 +261,13 @@ class ProductSearch {
     }
 
     showResults(results) {
+        // Determine if we're on a blog page (in subdirectory)
+        const isInBlogDirectory = window.location.pathname.includes('/blogs/');
+        const baseUrl = isInBlogDirectory ? '../' : '';
+        
         const resultsHTML = results.map(product => `
-            <a href="products.html#${product.category}" class="search-result-item" onclick="searchInstance.closeModal()">
-                <img src="${product.image}" alt="${product.name}" class="search-result-image" 
+            <a href="${baseUrl}products.html#${product.category}" class="search-result-item" onclick="searchInstance.closeModal()">
+                <img src="${baseUrl}${product.image}" alt="${product.name}" class="search-result-image" 
                      onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjRjFGNUY5Ii8+CjxwYXRoIGQ9Ik0zMCAyNUM0MS4wNDU3IDI1IDUwIDMzLjk1NDMgNTAgNDVDNTAgNTYuMDQ1NyA0MS4wNDU3IDY1IDMwIDY1QzE4Ljk1NDMgNjUgMTAgNTYuMDQ1NyAxMCA0NUMxMCAzMy45NTQzIDE4Ljk1NDMgMjUgMzAgMjVaIiBmaWxsPSIjRTJFOEYwIi8+Cjwvc3ZnPgo='">
                 <div class="search-result-content">
                     <h4 class="search-result-title">${product.name}</h4>
