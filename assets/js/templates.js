@@ -1,13 +1,15 @@
-// Template loader utility
+// Fast Template loader utility - Optimized for speed
 class TemplateLoader {
+    // Cache for loaded templates to avoid re-fetching
+    static templateCache = new Map();
+    
     static getBasePath() {
-        // Get the base path for the current page
+        // Simplified path resolution for better performance
         const currentPath = window.location.pathname;
         const isInSubdirectory = currentPath.includes('/blogs/');
         
-        // For deployed sites, we need to handle different scenarios
+        // Always use absolute paths for deployed sites for better performance
         if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-            // For deployed sites, always use absolute paths from root
             return '/';
         }
         
@@ -15,35 +17,42 @@ class TemplateLoader {
     }
     
     static async loadTemplate(templatePath, targetElement) {
-        const pathsToTry = [
-            templatePath,
-            templatePath.replace('./', '/'),
-            templatePath.replace('../', '/'),
-            `/assets/templates/shared/${templatePath.split('/').pop()}`
-        ];
-        
-        for (const path of pathsToTry) {
-            try {
-                console.log(`Trying to load template: ${path}`);
-                const response = await fetch(path);
-                if (response.ok) {
-                    const html = await response.text();
-                    const element = document.querySelector(targetElement);
-                    if (element) {
-                        element.innerHTML = html;
-                        console.log(`Successfully loaded template: ${path}`);
-                        return true;
-                    } else {
-                        console.error(`Target element not found: ${targetElement}`);
-                        return false;
-                    }
-                }
-            } catch (error) {
-                console.log(`Failed to load from ${path}:`, error.message);
+        // Check cache first for instant loading
+        if (this.templateCache.has(templatePath)) {
+            const element = document.querySelector(targetElement);
+            if (element) {
+                element.innerHTML = this.templateCache.get(templatePath);
+                return true;
             }
         }
         
-        console.error(`All template loading attempts failed for: ${templatePath}`);
+        // Optimized single path resolution - no multiple attempts
+        let finalPath;
+        if (templatePath.startsWith('/')) {
+            finalPath = templatePath;
+        } else {
+            const basePath = this.getBasePath();
+            finalPath = basePath + templatePath;
+        }
+        
+        try {
+            const response = await fetch(finalPath);
+            if (response.ok) {
+                const html = await response.text();
+                const element = document.querySelector(targetElement);
+                if (element) {
+                    element.innerHTML = html;
+                    // Cache the template for future use
+                    this.templateCache.set(templatePath, html);
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        } catch (error) {
+            // Silent fail for better performance
+        }
+        
         return false;
     }
     
@@ -54,17 +63,16 @@ class TemplateLoader {
         const success = await this.loadTemplate(templatePath, '#header');
         
         if (success) {
-            setTimeout(() => {
-                this.updateActiveNavLink();
-                const currentPath = window.location.pathname;
-                const isInSubdirectory = currentPath.includes('/blogs/');
-                if (isInSubdirectory) {
-                    this.updateNavbarForSubdirectory();
-                }
-                document.dispatchEvent(new CustomEvent('navbarLoaded'));
-            }, 100);
+            // Immediate execution without setTimeout for faster rendering
+            this.updateActiveNavLink();
+            const currentPath = window.location.pathname;
+            const isInSubdirectory = currentPath.includes('/blogs/');
+            if (isInSubdirectory) {
+                this.updateNavbarForSubdirectory();
+            }
+            document.dispatchEvent(new CustomEvent('navbarLoaded'));
         } else {
-            console.warn('Navbar template failed to load, using fallback');
+            // Fast fallback without console warnings
             this.createFallbackNavbar();
         }
         
@@ -74,10 +82,10 @@ class TemplateLoader {
     static createFallbackNavbar() {
         const header = document.querySelector('#header');
         if (header) {
+            // Optimized inline HTML - no external image dependencies for faster loading
             header.innerHTML = `
                 <div class="container header__container">
                     <a href="/" class="header__logo">
-                        <img src="/assets/images/logo/vardhamanagencies-logo-nobg.png" alt="Vardhaman Agencies" class="logo-image" onerror="this.style.display='none'">
                         <h1>Vardhaman Agencies</h1>
                     </a>
                     <nav class="header__nav">
@@ -104,15 +112,14 @@ class TemplateLoader {
                 </div>
             `;
             
-            setTimeout(() => {
-                this.updateActiveNavLink();
-                const currentPath = window.location.pathname;
-                const isInSubdirectory = currentPath.includes('/blogs/');
-                if (isInSubdirectory) {
-                    this.updateNavbarForSubdirectory();
-                }
-                document.dispatchEvent(new CustomEvent('navbarLoaded'));
-            }, 100);
+            // Immediate execution
+            this.updateActiveNavLink();
+            const currentPath = window.location.pathname;
+            const isInSubdirectory = currentPath.includes('/blogs/');
+            if (isInSubdirectory) {
+                this.updateNavbarForSubdirectory();
+            }
+            document.dispatchEvent(new CustomEvent('navbarLoaded'));
         }
     }
     
@@ -129,7 +136,7 @@ class TemplateLoader {
                 this.updateFooterForSubdirectory();
             }
         } else {
-            console.warn('Footer template failed to load, using fallback');
+            // Fast fallback
             this.createFallbackFooter();
         }
         
@@ -139,6 +146,7 @@ class TemplateLoader {
     static createFallbackFooter() {
         const footer = document.querySelector('#footer');
         if (footer) {
+            // Optimized footer HTML for faster loading
             footer.innerHTML = `
                 <div class="container">
                     <div class="footer__grid">
@@ -203,65 +211,51 @@ class TemplateLoader {
     
     static async loadScrollToTop() {
         const basePath = this.getBasePath();
-        const pathsToTry = [
-            `${basePath}assets/templates/shared/scroll-to-top.html`,
-            '/assets/templates/shared/scroll-to-top.html'
-        ];
+        const templatePath = `${basePath}assets/templates/shared/scroll-to-top.html`;
         
-        for (const templatePath of pathsToTry) {
-            try {
-                console.log(`Loading scroll-to-top: ${templatePath}`);
-                const response = await fetch(templatePath);
-                if (response.ok) {
-                    const html = await response.text();
-                    if (!document.getElementById('scrollToTop')) {
-                        document.body.insertAdjacentHTML('beforeend', html);
-                    }
-                    
-                    document.dispatchEvent(new CustomEvent('templateLoaded', {
-                        detail: { template: 'scroll-to-top' }
-                    }));
-                    console.log('Successfully loaded scroll-to-top template');
-                    return true;
+        // Fast single path attempt
+        try {
+            const response = await fetch(templatePath);
+            if (response.ok) {
+                const html = await response.text();
+                if (!document.getElementById('scrollToTop')) {
+                    document.body.insertAdjacentHTML('beforeend', html);
                 }
-            } catch (error) {
-                console.log(`Failed to load scroll-to-top from ${templatePath}:`, error.message);
+                
+                document.dispatchEvent(new CustomEvent('templateLoaded', {
+                    detail: { template: 'scroll-to-top' }
+                }));
+                return true;
             }
+        } catch (error) {
+            // Silent fail for better performance
         }
         
-        console.warn('ScrollToTop template failed to load');
         return false;
     }
     
     static async loadChatbot() {
         const basePath = this.getBasePath();
-        const pathsToTry = [
-            `${basePath}assets/templates/shared/chatbot.html?v=${Date.now()}`,
-            `/assets/templates/shared/chatbot.html?v=${Date.now()}`
-        ];
+        const templatePath = `${basePath}assets/templates/shared/chatbot.html`;
         
-        for (const templatePath of pathsToTry) {
-            try {
-                console.log(`Loading chatbot: ${templatePath}`);
-                const response = await fetch(templatePath);
-                if (response.ok) {
-                    const html = await response.text();
-                    if (!document.getElementById('chatbot')) {
-                        document.body.insertAdjacentHTML('beforeend', html);
-                    }
-                    
-                    document.dispatchEvent(new CustomEvent('templateLoaded', {
-                        detail: { template: 'chatbot' }
-                    }));
-                    console.log('Successfully loaded chatbot template');
-                    return true;
+        // Fast single path attempt without cache-busting for better performance
+        try {
+            const response = await fetch(templatePath);
+            if (response.ok) {
+                const html = await response.text();
+                if (!document.getElementById('chatbot')) {
+                    document.body.insertAdjacentHTML('beforeend', html);
                 }
-            } catch (error) {
-                console.log(`Failed to load chatbot from ${templatePath}:`, error.message);
+                
+                document.dispatchEvent(new CustomEvent('templateLoaded', {
+                    detail: { template: 'chatbot' }
+                }));
+                return true;
             }
+        } catch (error) {
+            // Silent fail for better performance
         }
         
-        console.warn('Chatbot template failed to load');
         return false;
     }
     

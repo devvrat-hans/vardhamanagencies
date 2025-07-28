@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="/assets/css/cta.css">
     <link rel="stylesheet" href="/assets/css/scroll-to-top.css">
     <link rel="stylesheet" href="/assets/css/index.css">
+    
+    <!-- Load critical templates script in head for fastest execution -->
+    <script src="/assets/js/templates.js"></script>
     <link rel="stylesheet" href="/assets/css/chatbot.css">
 </head>
 <body>
@@ -488,7 +491,6 @@
         <!-- Footer will be loaded here -->
     </footer>
 
-    <script src="/assets/js/templates.js"></script>
     <script src="/assets/js/navbar.js"></script>
     <script src="/assets/js/search.js"></script>
     <script src="/assets/js/footer.js"></script>
@@ -498,28 +500,25 @@
     <script src="/assets/js/index.js"></script>
     
     <script>
-        // Optimize template loading for better performance
-        document.addEventListener('DOMContentLoaded', async function() {
-            // Load critical templates first
-            const criticalTemplates = [
+        // Ultra-fast template loading - load critical templates immediately
+        (function() {
+            // Load navbar and footer in parallel as soon as possible
+            Promise.all([
                 TemplateLoader.loadNavbar(),
                 TemplateLoader.loadFooter()
-            ];
-            
-            // Load non-critical templates after critical ones
-            const nonCriticalTemplates = [
-                TemplateLoader.loadCTA(),
-                TemplateLoader.loadScrollToTop(),
-                TemplateLoader.loadChatbot()
-            ];
-            
-            // Load critical templates immediately
-            await Promise.all(criticalTemplates);
-            
-            // Load non-critical templates with slight delay
-            setTimeout(async () => {
-                await Promise.all(nonCriticalTemplates);
-            }, 100);
+            ]).then(() => {
+                // Load non-critical templates after main ones
+                Promise.all([
+                    TemplateLoader.loadCTA(),
+                    TemplateLoader.loadScrollToTop(),
+                    TemplateLoader.loadChatbot()
+                ]);
+            });
+        })();
+        
+        // Wait for DOM to be ready for other functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM is ready - initialize other page functionality if needed
         });
     </script>
 </body>

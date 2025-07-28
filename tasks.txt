@@ -308,9 +308,15 @@
 
 - Still on the deployed website, the navbar and the footer are not visible on the blogs page. Fix this for me. The navbar and the footer should be visible on all the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
 
-On the deployed website, navbar and footer are not visible also on the homepage of the website. Fix this for me. The navbar and the footer should be visible on all the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+- On the deployed website, navbar and footer are not visible also on the homepage of the website. Fix this for me. The navbar and the footer should be visible on all the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
 
+- ohk i have an issue which needs to solved at priority. one the deployed website(vardhamanagencies.in), the templates are getting loaded after a lot of time, navbar and the footer loads very late and it doesn't look good. make sure all teh templates loads very quickly. how can i make sure that?
 
+the search functionality is not working on the deployed website. make sure that the search functionality is working on the deployed website. When i click on the search button in the navbar, nothing appears, fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+On the deployed website, the active tab is not getting highlighted in the navbar. Make sure that the active tab is getting highlighted in the navbar on the deployed website. The active tab should be highlighted based on the page that the user is currently on. Also go through the rules.instructions.md after doing the tasks given to you.
+
+On the deployed website, when i go to the blog page, both the home and the blog gets highlighed on the navbar. Fix this thing for me. The active tab should be highlighted based on the page that the user is currently on. Also go through the rules.instructions.md after doing the tasks given to you.
 
 
 

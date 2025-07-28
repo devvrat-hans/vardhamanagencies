@@ -544,12 +544,18 @@
     <script src="/assets/js/chatbot.js"></script>
     <script src="/assets/js/refund.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", async function() {
-            await TemplateLoader.loadNavbar();
-            await TemplateLoader.loadFooter();
-            await TemplateLoader.loadCTA();
-            await TemplateLoader.loadScrollToTop();
-        });
+        // Ultra-fast template loading - load critical templates immediately
+        (function() {
+            Promise.all([
+                TemplateLoader.loadNavbar(),
+                TemplateLoader.loadFooter()
+            ]).then(() => {
+                Promise.all([
+                    TemplateLoader.loadCTA(),
+                    TemplateLoader.loadScrollToTop()
+                ]);
+            });
+        })();
     </script>
 </body>
 </html>
