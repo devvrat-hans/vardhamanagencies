@@ -99,6 +99,13 @@ class TemplateBlogLoader {
             
             // Dispatch custom event to notify that navbar is loaded
             document.dispatchEvent(new CustomEvent('navbarLoaded'));
+            
+            // Ensure search functionality is initialized after fallback navbar
+            setTimeout(() => {
+                if (window.searchInstance && typeof window.searchInstance.setupElements === 'function') {
+                    window.searchInstance.setupElements();
+                }
+            }, 50);
         }
     }
     

@@ -336,6 +336,41 @@ On the deployed website, the active tab is not getting highlighted in the navbar
 
 On the deployed website, when i go to the blog page, both the home and the blog gets highlighed on the navbar. Fix this thing for me. The active tab should be highlighted based on the page that the user is currently on. Also go through the rules.instructions.md after doing the tasks given to you.
 
+No, the search functionality is not working after the fallback fix. Your priority should be make sure that the original code works fine so that we don't need to rely on fallback at all. so make sure that the templates.js and the templates-blogs.js are working fine on the deployed website. The search functionality should be able to search for the products on the products page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Resolve these errors in the console which appears when i open the deployed website:
+Uncaught SyntaxError: Identifier 'TemplateLoader' has already been declared (at templates.js:1:1)Understand this error
+VM282 templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/navbar 404 (Not Found)
+loadTemplate @ VM282 templates.js:39
+loadNavbar @ VM282 templates.js:63
+(anonymous) @ (index):508
+(anonymous) @ (index):518Understand this error
+VM282 templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/footer 404 (Not Found)
+loadTemplate @ VM282 templates.js:39
+loadFooter @ VM282 templates.js:130
+(anonymous) @ (index):509
+(anonymous) @ (index):518Understand this error
+VM282 templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/cta 404 (Not Found)
+loadTemplate @ VM282 templates.js:39
+loadCTA @ VM282 templates.js:209
+(anonymous) @ (index):513
+Promise.then
+(anonymous) @ (index):510
+(anonymous) @ (index):518Understand this error
+VM282 templates.js:243  GET https://vardhamanagencies.in/assets/templates/shared/chatbot 404 (Not Found)
+loadChatbot @ VM282 templates.js:243
+(anonymous) @ (index):515
+Promise.then
+(anonymous) @ (index):510
+(anonymous) @ (index):518Understand this error
+VM282 templates.js:218  GET https://vardhamanagencies.in/assets/templates/shared/scroll-to-top 404 (Not Found)
+loadScrollToTop @ VM282 templates.js:218
+(anonymous) @ (index):514
+Promise.then
+(anonymous) @ (index):510
+(anonymous) @ (index):518Understand this error
+
+Also go through the rules.instructions.md after doing the tasks given to you.
 
 
-
+Now, are the templates working fine and correctly for all the pages of the website? The templates should be working fine and correctly for all the pages of the website. The templates should be loaded properly on all the pages of the website, including the homepage, products page, about us page, contact us page, blogs page, privacy policy page, terms and conditions page and refund policy page. Also go through the rules.instructions.md after doing the tasks given to you.

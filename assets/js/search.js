@@ -70,7 +70,7 @@ class ProductSearch {
         document.addEventListener('navbarLoaded', () => {
             setTimeout(() => {
                 this.setupElements();
-            }, 100);
+            }, 50);
         });
         
         // Also listen for DOMContentLoaded as fallback
@@ -78,34 +78,240 @@ class ProductSearch {
             document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     this.trySetupElements();
-                }, 100);
+                }, 50);
             });
         } else {
             setTimeout(() => {
                 this.trySetupElements();
-            }, 100);
+            }, 50);
         }
         
-        // Additional retry mechanism for deployed sites
+        // Enhanced retry mechanism for deployed sites with more aggressive polling
         let retryCount = 0;
-        const maxRetries = 10;
+        const maxRetries = 20;
         const retryInterval = setInterval(() => {
             retryCount++;
             if (retryCount >= maxRetries) {
                 clearInterval(retryInterval);
+                // Final attempt with fallback creation
+                this.ensureSearchFunctionality();
                 return;
             }
             
             if (!this.searchModal && document.getElementById('searchModal')) {
                 this.setupElements();
                 clearInterval(retryInterval);
+            } else if (!this.searchModal && retryCount > 10) {
+                // After 10 retries, try to create the search elements
+                this.createSearchElementsIfMissing();
             }
-        }, 200);
+        }, 150);
     }
 
     trySetupElements() {
         // Check if elements exist and setup if they do
         if (document.getElementById('searchModal')) {
+            this.setupElements();
+        }
+    }
+
+    createSearchElementsIfMissing() {
+        // If search modal doesn't exist, check if we can add it to the page
+        if (!document.getElementById('searchModal')) {
+            const header = document.querySelector('#header');
+            if (header && !header.querySelector('#searchModal')) {
+                // Add search modal to header if it's missing
+                const searchModalHTML = `
+                    <!-- Search Modal -->
+                    <div class="search-modal" id="searchModal">
+                        <div class="search-modal__backdrop"></div>
+                        <div class="search-modal__content">
+                            <div class="search-modal__header">
+                                <div class="search-input-container">
+                                    <svg class="search-input-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                    </svg>
+                                    <input type="text" class="search-input" placeholder="Search products..." autocomplete="off" spellcheck="false">
+                                    <button class="search-close" aria-label="Close search">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="search-modal__body">
+                                <div class="search-results" id="searchResults">
+                                    <div class="search-placeholder">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                        </svg>
+                                        <h3>Search Products</h3>
+                                        <p>Start typing to search for bubble wrap rolls, stretch films, and packaging materials.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                header.insertAdjacentHTML('beforeend', searchModalHTML);
+                console.log('Search: Added missing search modal to page');
+            }
+            
+            // Also ensure search toggle button exists
+            if (!document.querySelector('.search-toggle')) {
+                const headerActions = document.querySelector('.header__actions');
+                if (headerActions && !headerActions.querySelector('.search-toggle')) {
+                    const searchToggleHTML = `
+                        <button class="header__action-btn search-toggle" aria-label="Search">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </button>
+                    `;
+                    headerActions.insertAdjacentHTML('afterbegin', searchToggleHTML);
+                    console.log('Search: Added missing search toggle button');
+                }
+            }
+            
+            // Try setup again after adding elements
+            setTimeout(() => {
+                this.setupElements();
+            }, 100);
+        }
+    }
+
+    addSearchButtonToPage() {
+        // Try to find header actions or navbar to add search button
+        const headerActions = document.querySelector('.header__actions');
+        const headerContainer = document.querySelector('.header__container');
+        const header = document.querySelector('#header, header');
+        
+        if (headerActions) {
+            // Add search button to existing header actions
+            const searchButton = document.createElement('button');
+            searchButton.className = 'header__action-btn search-toggle';
+            searchButton.setAttribute('aria-label', 'Search');
+            searchButton.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            `;
+            headerActions.insertBefore(searchButton, headerActions.firstChild);
+            console.log('Search: Added search button to header actions');
+        } else if (headerContainer) {
+            // Create header actions if they don't exist
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'header__actions';
+            actionsDiv.innerHTML = `
+                <button class="header__action-btn search-toggle" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            `;
+            headerContainer.appendChild(actionsDiv);
+            console.log('Search: Created header actions with search button');
+        } else if (header) {
+            // Add a floating search button as last resort
+            const searchButton = document.createElement('button');
+            searchButton.className = 'floating-search-btn';
+            searchButton.setAttribute('aria-label', 'Search');
+            searchButton.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: #004BB8;
+                color: white;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0, 75, 184, 0.3);
+                transition: all 0.3s ease;
+            `;
+            searchButton.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            `;
+            
+            // Add hover effect
+            searchButton.addEventListener('mouseenter', () => {
+                searchButton.style.transform = 'scale(1.1)';
+                searchButton.style.background = '#1a5cc8';
+            });
+            searchButton.addEventListener('mouseleave', () => {
+                searchButton.style.transform = 'scale(1)';
+                searchButton.style.background = '#004BB8';
+            });
+            
+            document.body.appendChild(searchButton);
+            console.log('Search: Added floating search button');
+        }
+    }
+
+    ensureSearchFunctionality() {
+        // Final fallback - ensure search works even if templates fail
+        if (!document.getElementById('searchModal')) {
+            console.log('Search: Creating complete search functionality as fallback');
+            
+            // Create the search modal if it doesn't exist
+            if (!document.querySelector('.search-modal')) {
+                const body = document.body;
+                const searchModalHTML = `
+                    <div class="search-modal" id="searchModal">
+                        <div class="search-modal__backdrop"></div>
+                        <div class="search-modal__content">
+                            <div class="search-modal__header">
+                                <div class="search-input-container">
+                                    <svg class="search-input-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                    </svg>
+                                    <input type="text" class="search-input" placeholder="Search products..." autocomplete="off" spellcheck="false">
+                                    <button class="search-close" aria-label="Close search">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="search-modal__body">
+                                <div class="search-results" id="searchResults">
+                                    <div class="search-placeholder">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                        </svg>
+                                        <h3>Search Products</h3>
+                                        <p>Start typing to search for bubble wrap rolls, stretch films, and packaging materials.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                body.insertAdjacentHTML('beforeend', searchModalHTML);
+            }
+            
+            // Add search functionality to any existing search buttons
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('.search-toggle') || e.target.closest('[aria-label="Search"]')) {
+                    e.preventDefault();
+                    if (this.searchModal) {
+                        this.openModal();
+                    } else {
+                        this.setupElements();
+                        setTimeout(() => {
+                            if (this.searchModal) {
+                                this.openModal();
+                            }
+                        }, 50);
+                    }
+                }
+            });
+            
+            // Setup elements after creating fallback
             this.setupElements();
         }
     }
@@ -131,6 +337,7 @@ class ProductSearch {
             this.bindEvents();
             // Initialize with placeholder content
             this.showPlaceholder();
+            console.log('Search: All elements found and initialized successfully');
         } else {
             // Log missing elements for debugging
             const missingElements = Object.entries(elementsFound)
@@ -139,6 +346,11 @@ class ProductSearch {
             
             if (missingElements.length > 0) {
                 console.warn('Search: Missing elements:', missingElements.join(', '));
+                
+                // Try to add missing elements if possible
+                if (!this.searchToggle) {
+                    this.addSearchButtonToPage();
+                }
             }
         }
     }
@@ -285,7 +497,39 @@ let searchInstance;
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         searchInstance = new ProductSearch();
+        window.searchInstance = searchInstance; // Make it globally accessible
     });
 } else {
     searchInstance = new ProductSearch();
+    window.searchInstance = searchInstance; // Make it globally accessible
 }
+
+// Global search button click handler as backup
+document.addEventListener('click', (e) => {
+    if ((e.target.closest('.search-toggle') || e.target.closest('[aria-label="Search"]') || e.target.closest('.floating-search-btn')) && !e.defaultPrevented) {
+        e.preventDefault();
+        if (window.searchInstance && window.searchInstance.searchModal) {
+            window.searchInstance.openModal();
+        } else {
+            // Try to initialize search if not available
+            setTimeout(() => {
+                if (window.searchInstance) {
+                    window.searchInstance.setupElements();
+                    if (window.searchInstance.searchModal) {
+                        window.searchInstance.openModal();
+                    }
+                }
+            }, 100);
+        }
+    }
+});
+
+// Global keyboard shortcut for search
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        if (window.searchInstance && window.searchInstance.searchModal) {
+            window.searchInstance.openModal();
+        }
+    }
+});

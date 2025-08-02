@@ -4,17 +4,25 @@
     
     // Critical template loader that runs immediately without waiting for DOMContentLoaded
     function loadCriticalTemplates() {
+        // Make sure TemplateLoader is available
+        if (typeof window.TemplateLoader === 'undefined') {
+            console.warn('TemplateLoader not available in fast-template-init');
+            return;
+        }
+        
         // Load navbar and footer in parallel for maximum speed
         Promise.all([
-            TemplateLoader.loadNavbar(),
-            TemplateLoader.loadFooter()
+            window.TemplateLoader.loadNavbar(),
+            window.TemplateLoader.loadFooter()
         ]).then(() => {
             // Load non-critical templates after main ones are done
             Promise.all([
-                TemplateLoader.loadCTA(),
-                TemplateLoader.loadScrollToTop(),
-                TemplateLoader.loadChatbot()
+                window.TemplateLoader.loadCTA(),
+                window.TemplateLoader.loadScrollToTop(),
+                window.TemplateLoader.loadChatbot()
             ]);
+        }).catch(error => {
+            console.warn('Fast template loading error:', error);
         });
     }
     
@@ -28,9 +36,9 @@
     }
     
     // Alternative: If TemplateLoader is not yet available, wait for it
-    if (typeof TemplateLoader === 'undefined') {
+    if (typeof window.TemplateLoader === 'undefined') {
         const checkTemplateLoader = setInterval(() => {
-            if (typeof TemplateLoader !== 'undefined') {
+            if (typeof window.TemplateLoader !== 'undefined') {
                 clearInterval(checkTemplateLoader);
                 loadCriticalTemplates();
             }
