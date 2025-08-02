@@ -14,7 +14,7 @@ class BlogPostLoader {
                 tags: ["bubble-wrap", "packaging-tips", "protection"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
                 readTime: 8,
-                url: "blogs/bubble-wrap-ultimate-guide.html"
+                url: "./blogs/bubble-wrap-ultimate-guide.html"
             },
             {
                 id: 2,
@@ -27,7 +27,7 @@ class BlogPostLoader {
                 tags: ["eco-friendly", "sustainability", "green-packaging"],
                 image: BlogPostLoader.generatePlaceholderImage("sustainability"),
                 readTime: 6,
-                url: "blogs/sustainable-packaging-solutions.html"
+                url: "./blogs/sustainable-packaging-solutions.html"
             },
             {
                 id: 3,
@@ -40,7 +40,7 @@ class BlogPostLoader {
                 tags: ["market-analysis", "trends", "technology"],
                 image: BlogPostLoader.generatePlaceholderImage("industry-trends"),
                 readTime: 10,
-                url: "blogs/packaging-industry-trends-2025.html"
+                url: "./blogs/packaging-industry-trends-2025.html"
             },
             {
                 id: 4,
@@ -53,7 +53,7 @@ class BlogPostLoader {
                 tags: ["stretch-film", "bubble-wrap", "comparison"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
                 readTime: 7,
-                url: "blogs/stretch-film-vs-bubble-wrap.html"
+                url: "./blogs/stretch-film-vs-bubble-wrap.html"
             },
             {
                 id: 5,
@@ -66,7 +66,7 @@ class BlogPostLoader {
                 tags: ["cost-optimization", "efficiency", "business"],
                 image: BlogPostLoader.generatePlaceholderImage("packaging-tips"),
                 readTime: 9,
-                url: "blogs/cost-effective-packaging-strategies.html"
+                url: "./blogs/cost-effective-packaging-strategies.html"
             },
             {
                 id: 6,
@@ -79,7 +79,7 @@ class BlogPostLoader {
                 tags: ["e-commerce", "retail", "customer-experience"],
                 image: BlogPostLoader.generatePlaceholderImage("packaging-tips"),
                 readTime: 6,
-                url: "blogs/ecommerce-packaging-best-practices.html"
+                url: "./blogs/ecommerce-packaging-best-practices.html"
             },
             {
                 id: 7,
@@ -92,7 +92,7 @@ class BlogPostLoader {
                 tags: ["regulations", "compliance", "legal"],
                 image: BlogPostLoader.generatePlaceholderImage("industry-trends"),
                 readTime: 12,
-                url: "blogs/packaging-regulations-compliance-india.html"
+                url: "./blogs/packaging-regulations-compliance-india.html"
             },
             {
                 id: 8,
@@ -105,7 +105,7 @@ class BlogPostLoader {
                 tags: ["science", "technology", "innovation"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
                 readTime: 11,
-                url: "blogs/science-behind-bubble-wrap.html"
+                url: "./blogs/science-behind-bubble-wrap.html"
             },
             {
                 id: 9,
@@ -118,7 +118,7 @@ class BlogPostLoader {
                 tags: ["recycling", "waste-management", "environment"],
                 image: BlogPostLoader.generatePlaceholderImage("sustainability"),
                 readTime: 8,
-                url: "blogs/packaging-recycling-disposal-guide.html"
+                url: "./blogs/packaging-recycling-disposal-guide.html"
             }
         ];
         
@@ -253,7 +253,7 @@ class BlogPost {
                             <div class="blog-card__author-avatar">${this.author.charAt(0).toUpperCase()}</div>
                             <span class="blog-card__author-name">${this.author}</span>
                         </div>
-                        <a href="${this.url}" class="blog-card__read-more">
+                        <a href="#" class="blog-card__read-more" data-blog-url="${this.url}" onclick="navigateToBlog(event, this.dataset.blogUrl);">
                             Read More
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/>
@@ -270,6 +270,15 @@ class BlogPost {
             word.charAt(0).toUpperCase() + word.slice(1)
         ).join(' ');
     }
+}
+
+// Global function to handle blog navigation
+function navigateToBlog(event, blogUrl) {
+    event.preventDefault();
+    // Remove leading ./ or / and just use the relative path
+    const cleanUrl = blogUrl.replace(/^\.\//, '').replace(/^\//, '');
+    // Use window.location to navigate directly
+    window.location.href = window.location.origin + '/' + cleanUrl;
 }
 
 // Export for use in other modules

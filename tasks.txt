@@ -378,5 +378,10 @@ Also go through the rules.instructions.md after doing the tasks given to you.
 
 - don't need to use templates at all, manually add the code of the navbar, footer, chatbot and the scroll to top on to all blog pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
 
-- clicking on read more in any of the blogs on the blogs.html takes me to this url: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide and it is giving 404 error, how can i fix this thing? Also go through the rules.instructions.md after doing the tasks given to you.
+- In the deployed website upon clicking on read more in any of the blogs on the blogs.html takes me to this url: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide and it is giving 404 error, how can i fix this thing? Also go through the rules.instructions.md after doing the tasks given to you.
 
+In the deployed website upon clicking on read more in any of the blogs on the blogs.html takes me to this url: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide and it is giving 404 error, how can i fix this thing? Do it using some other way than fixing relative and absolute url paths because noone fo them are helping. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Make a robots.txt file in the root directory of the website to manage crawling and indexing by search engines. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Make a sitemap.xml file in the root directory of the website to help search engines understand the structure of the site. Also go through the rules.instructions.md after doing the tasks given to you.
