@@ -374,3 +374,7 @@ Also go through the rules.instructions.md after doing the tasks given to you.
 
 
 Now, are the templates working fine and correctly for all the pages of the website? The templates should be working fine and correctly for all the pages of the website. The templates should be loaded properly on all the pages of the website, including the homepage, products page, about us page, contact us page, blogs page, privacy policy page, terms and conditions page and refund policy page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+when i click on any of the blogs on the blogs page, it is redirected to https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide and not this, https://vardhamanagencies.in/blogs/bubble-wrap-ultimate-guide, how can we fix this thing? Also go through the rules.instructions.md after doing the tasks given to you.
+
+don't need to use templates at all, manually add the code of the navbar, footer, chatbot and the scroll to top on to all blog pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
