@@ -377,3 +377,5 @@
 In blog-packaging-regulations-compliance-india.html, remove the categories and the need for packaging solutions from the section from the sidebar, the icon on the chatbot widget, the footer and the cta is not same as it appears on the other pages of the website like the homepage, make it same. Also go through the rules.instructions.md after doing the tasks given to you.
 
 In blog-cost-effective-packaging-strategies.html, remove the categories and the need for packaging solutions from the section from the sidebar, the icon on the chatbot widget, the footer and the cta is not same as it appears on the other pages of the website like the homepage, make it same. Also go through the rules.instructions.md after doing the tasks given to you.
+
+check the realted
