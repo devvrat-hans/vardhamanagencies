@@ -1,0 +1,47 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of main pages
+Allow: /index.html
+Allow: /products.html
+Allow: /blogs.html
+Allow: /about.html
+Allow: /contact.html
+
+# Allow crawling of all blog posts
+Allow: /blogs/
+
+# Allow crawling of assets (CSS, JS, images)
+Allow: /assets/
+
+# Allow crawling of policy pages
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /refund.html
+
+# Disallow any temporary or admin files if they exist
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /*.log
+Disallow: /tmp/
+Disallow: /temp/
+
+# Sitemap location (when available)
+# Sitemap: https://vardhamanagencies.in/sitemap.xml
+
+# Crawl delay (be respectful to server resources)
+Crawl-delay: 1
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

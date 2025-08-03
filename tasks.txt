@@ -312,65 +312,7 @@
 
 - ohk i have an issue which needs to solved at priority. one the deployed website(vardhamanagencies.in), the templates are getting loaded after a lot of time, navbar and the footer loads very late and it doesn't look good. make sure all teh templates loads very quickly. how can i make sure that?
 
-the search functionality is not working on the deployed website. make sure that the search functionality is working on the deployed website. When i click on the search button in the navbar, nothing appears, fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
-
-This is the console, when i open the deployed website. templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/navbar 404 (Not Found)
-loadTemplate @ templates.js:39
-loadNavbar @ templates.js:63
-(anonymous) @ about:257
-(anonymous) @ about:265Understand this error
-templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/footer 404 (Not Found)
-loadTemplate @ templates.js:39
-loadFooter @ templates.js:130
-(anonymous) @ about:258
-(anonymous) @ about:265Understand this error
-templates.js:218  GET https://vardhamanagencies.in/assets/templates/shared/scroll-to-top 404 (Not Found)
-loadScrollToTop @ templates.js:218
-(anonymous) @ about:262
-Promise.then
-(anonymous) @ about:259
-(anonymous) @ about:265Understand this error
-templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/cta 404 (Not Found)
-
-On the deployed website, the active tab is not getting highlighted in the navbar. Make sure that the active tab is getting highlighted in the navbar on the deployed website. The active tab should be highlighted based on the page that the user is currently on. Also go through the rules.instructions.md after doing the tasks given to you.
-
-On the deployed website, when i go to the blog page, both the home and the blog gets highlighed on the navbar. Fix this thing for me. The active tab should be highlighted based on the page that the user is currently on. Also go through the rules.instructions.md after doing the tasks given to you.
-
-No, the search functionality is not working after the fallback fix. Your priority should be make sure that the original code works fine so that we don't need to rely on fallback at all. so make sure that the templates.js and the templates-blogs.js are working fine on the deployed website. The search functionality should be able to search for the products on the products page. Also go through the rules.instructions.md after doing the tasks given to you.
-
-Resolve these errors in the console which appears when i open the deployed website:
-Uncaught SyntaxError: Identifier 'TemplateLoader' has already been declared (at templates.js:1:1)Understand this error
-VM282 templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/navbar 404 (Not Found)
-loadTemplate @ VM282 templates.js:39
-loadNavbar @ VM282 templates.js:63
-(anonymous) @ (index):508
-(anonymous) @ (index):518Understand this error
-VM282 templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/footer 404 (Not Found)
-loadTemplate @ VM282 templates.js:39
-loadFooter @ VM282 templates.js:130
-(anonymous) @ (index):509
-(anonymous) @ (index):518Understand this error
-VM282 templates.js:39  GET https://vardhamanagencies.in/assets/templates/shared/cta 404 (Not Found)
-loadTemplate @ VM282 templates.js:39
-loadCTA @ VM282 templates.js:209
-(anonymous) @ (index):513
-Promise.then
-(anonymous) @ (index):510
-(anonymous) @ (index):518Understand this error
-VM282 templates.js:243  GET https://vardhamanagencies.in/assets/templates/shared/chatbot 404 (Not Found)
-loadChatbot @ VM282 templates.js:243
-(anonymous) @ (index):515
-Promise.then
-(anonymous) @ (index):510
-(anonymous) @ (index):518Understand this error
-VM282 templates.js:218  GET https://vardhamanagencies.in/assets/templates/shared/scroll-to-top 404 (Not Found)
-loadScrollToTop @ VM282 templates.js:218
-(anonymous) @ (index):514
-Promise.then
-(anonymous) @ (index):510
-(anonymous) @ (index):518Understand this error
-
-Also go through the rules.instructions.md after doing the tasks given to you.
+- the search functionality is not working on the deployed website. make sure that the search functionality is working on the deployed website. When i click on the search button in the navbar, nothing appears, fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
 
 - Now, are the templates working fine and correctly for all the pages of the website? The templates should be working fine and correctly for all the pages of the website. The templates should be loaded properly on all the pages of the website, including the homepage, products page, about us page, contact us page, blogs page, privacy policy page, terms and conditions page and refund policy page. Also go through the rules.instructions.md after doing the tasks given to you.
 
@@ -380,8 +322,54 @@ Also go through the rules.instructions.md after doing the tasks given to you.
 
 - In the deployed website upon clicking on read more in any of the blogs on the blogs.html takes me to this url: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide and it is giving 404 error, how can i fix this thing? Also go through the rules.instructions.md after doing the tasks given to you.
 
-In the deployed website upon clicking on read more in any of the blogs on the blogs.html takes me to this url: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide and it is giving 404 error, how can i fix this thing? Do it using some other way than fixing relative and absolute url paths because noone fo them are helping. Also go through the rules.instructions.md after doing the tasks given to you.
+- In the deployed website upon clicking on read more in any of the blogs on the blogs.html takes me to this url: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide and it is giving 404 error, how can i fix this thing? Do it using some other way than fixing relative and absolute url paths because noone fo them are helping. Also go through the rules.instructions.md after doing the tasks given to you.
 
-Make a robots.txt file in the root directory of the website to manage crawling and indexing by search engines. Also go through the rules.instructions.md after doing the tasks given to you.
+- Don't add the blogposts dynamically from blogposts.js, rather, have them directly in the blogs.html file. The blogposts should be added directly in the blogs.html file and they should be visible on the blogs page of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The blogs.html has the blogposts directly added to it as in the cards that are now loading in the blogs.html from the blogsposts.js should have their content writtetn in the blogs.html as html code. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The blogposts are still added dynamically, make sure that the html code fro the cards are writtne in the blogs.html. The blogposts should be added directly in the blogs.html file and they should be visible on the blogs page of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Make a robots.txt file in the root directory of the website to manage crawling and indexing by search engines. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- In the blogposts, the navbar, footer, chatbot and the scroll to top are not loading properly. Make sure that the navbar, footer, chatbot and the scroll to top are loading properly on all the blogposts. The navbar, footer, chatbot and the scroll to top should be visible on all the blogposts of the website. Also, they should have proper css loaded like from the css folder. Like now, some have improper navbar, others have improper looking chatbot. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- In the bubble-wrap-ultimate-guide.html, the footer is not appearing as it appears in the rest of the pages of the website. Make sure that the footer is appearing as it appears in the rest of the pages of the website. The footer should be consistent across all the pages of the website, including the homepage, products page, about us page, contact us page, blogs page, privacy policy page, terms and conditions page and refund policy page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- In sustainable-packaging-solutions.html, the navbar is not loading properly, the cta is also not appearing correctly. Upon opening this page, the chatbot is already loaded and it looks bad, there is some css issue. Fix the CSS for the navbar, cta, footer and chatbot to ensure they are displayed correctly. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- In the added blogposts, the contact us section on the sidebar is not appearing as it should. Also the cta is not appearing as it appears on the rest of the pages of the website. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- The cta of the blogposts that are added in the blogs folder is conjusted to towards the left side. Make sure that the cta is not conjusted towards the left side and it looks good on all devices. The cta should be consistent across all the pages of the website, including the homepage, products page, about us page, contact us page, blogs page, privacy policy page, terms and conditions page and refund policy page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- In the blogposts that we have added in the blogs folder, manually add the code for navbar, footer, scroll to top, cta ad chatbot. The navbar, footer, scroll to top, cta and chatbot should be added manually in the blogposts that we have added in the blogs folder. The navbar, footer, scroll to top, cta and chatbot should be consistent across all the pages of the website, including the homepage, products page, about us page, contact us page, blogs page, privacy policy page, terms and conditions page and refund policy page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now we have to add blogposts to website inside the blogs folder. Now, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. First add, The Ultimate Guide to Bubble Wrap: Types, Uses, and Benefits. Add Also go through the rules.instructions.md after doing the tasks given to you.
+
+- As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Sustainable Packaging Solutions: The Future of Protective Packaging. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Packaging Industry Trends 2025: What's Shaping the Market. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Stretch Film vs Bubble Wrap: Choosing the Right Protection. Also go through the rules.instructions.md after doing the tasks given to you.
+
+As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Cost-Effective Packaging: Maximizing Value in Your Supply Chain. Also go through the rules.instructions.md after doing the tasks given to you.
+
+As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, E-commerce Packaging Best Practices for Online Retailers. Also go through the rules.instructions.md after doing the tasks given to you.
+
+As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Understanding Packaging Regulations and Compliance in India. Also go through the rules.instructions.md after doing the tasks given to you.
+
+As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, The Science Behind Bubble Wrap: How Air Cushioning Works. Also go through the rules.instructions.md after doing the tasks given to you.
+
+As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Recycling and Disposal: Responsible Packaging Lifecycle Management. Also go through the rules.instructions.md after doing the tasks given to you.
 
 Make a sitemap.xml file in the root directory of the website to help search engines understand the structure of the site. Also go through the rules.instructions.md after doing the tasks given to you.
+
+when i click on the chatbot widget in the blogs.html and then click on any category, there appears no blogsposts in the blogs.html then. fix this bug for me. Clicking on a category in the chatbot shouldn't affect the category filter on the blogs.html page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+
+
+
+
+
+
+
