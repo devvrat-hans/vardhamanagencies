@@ -1,7 +1,6 @@
 // Blog Posts Loader and Manager
 class BlogPostLoader {
     static async loadAllPosts() {
-        // Sample blog posts data - in a real application, this would fetch from a CMS or API
         const posts = [
             {
                 id: 1,
@@ -14,7 +13,7 @@ class BlogPostLoader {
                 tags: ["bubble-wrap", "packaging-tips", "protection"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
                 readTime: 8,
-                url: "./blogs/bubble-wrap-ultimate-guide.html"
+                url: "/blogs/bubble-wrap-ultimate-guide"
             },
             {
                 id: 2,
@@ -27,7 +26,7 @@ class BlogPostLoader {
                 tags: ["eco-friendly", "sustainability", "green-packaging"],
                 image: BlogPostLoader.generatePlaceholderImage("sustainability"),
                 readTime: 6,
-                url: "./blogs/sustainable-packaging-solutions.html"
+                url: "/blogs/sustainable-packaging-solutions"
             },
             {
                 id: 3,
@@ -40,7 +39,7 @@ class BlogPostLoader {
                 tags: ["market-analysis", "trends", "technology"],
                 image: BlogPostLoader.generatePlaceholderImage("industry-trends"),
                 readTime: 10,
-                url: "./blogs/packaging-industry-trends-2025.html"
+                url: "/blogs/packaging-industry-trends-2025"
             },
             {
                 id: 4,
@@ -53,7 +52,7 @@ class BlogPostLoader {
                 tags: ["stretch-film", "bubble-wrap", "comparison"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
                 readTime: 7,
-                url: "./blogs/stretch-film-vs-bubble-wrap.html"
+                url: "/blogs/stretch-film-vs-bubble-wrap"
             },
             {
                 id: 5,
@@ -66,7 +65,7 @@ class BlogPostLoader {
                 tags: ["cost-optimization", "efficiency", "business"],
                 image: BlogPostLoader.generatePlaceholderImage("packaging-tips"),
                 readTime: 9,
-                url: "./blogs/cost-effective-packaging-strategies.html"
+                url: "/blogs/cost-effective-packaging-strategies"
             },
             {
                 id: 6,
@@ -79,7 +78,7 @@ class BlogPostLoader {
                 tags: ["e-commerce", "retail", "customer-experience"],
                 image: BlogPostLoader.generatePlaceholderImage("packaging-tips"),
                 readTime: 6,
-                url: "./blogs/ecommerce-packaging-best-practices.html"
+                url: "/blogs/ecommerce-packaging-best-practices"
             },
             {
                 id: 7,
@@ -92,7 +91,7 @@ class BlogPostLoader {
                 tags: ["regulations", "compliance", "legal"],
                 image: BlogPostLoader.generatePlaceholderImage("industry-trends"),
                 readTime: 12,
-                url: "./blogs/packaging-regulations-compliance-india.html"
+                url: "/blogs/packaging-regulations-compliance-india"
             },
             {
                 id: 8,
@@ -105,7 +104,7 @@ class BlogPostLoader {
                 tags: ["science", "technology", "innovation"],
                 image: BlogPostLoader.generatePlaceholderImage("product-guides"),
                 readTime: 11,
-                url: "./blogs/science-behind-bubble-wrap.html"
+                url: "/blogs/science-behind-bubble-wrap"
             },
             {
                 id: 9,
@@ -118,7 +117,7 @@ class BlogPostLoader {
                 tags: ["recycling", "waste-management", "environment"],
                 image: BlogPostLoader.generatePlaceholderImage("sustainability"),
                 readTime: 8,
-                url: "./blogs/packaging-recycling-disposal-guide.html"
+                url: "/blogs/packaging-recycling-disposal-guide"
             }
         ];
         
