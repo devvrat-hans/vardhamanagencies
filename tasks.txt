@@ -352,24 +352,22 @@
 
 - As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Stretch Film vs Bubble Wrap: Choosing the Right Protection. Also go through the rules.instructions.md after doing the tasks given to you.
 
-As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Cost-Effective Packaging: Maximizing Value in Your Supply Chain. Also go through the rules.instructions.md after doing the tasks given to you.
+- As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Cost-Effective Packaging: Maximizing Value in Your Supply Chain. Also go through the rules.instructions.md after doing the tasks given to you.
 
-As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, E-commerce Packaging Best Practices for Online Retailers. Also go through the rules.instructions.md after doing the tasks given to you.
+- As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, E-commerce Packaging Best Practices for Online Retailers. Also go through the rules.instructions.md after doing the tasks given to you.
 
-As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Understanding Packaging Regulations and Compliance in India. Also go through the rules.instructions.md after doing the tasks given to you.
+- As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Understanding Packaging Regulations and Compliance in India. Also go through the rules.instructions.md after doing the tasks given to you.
 
-As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, The Science Behind Bubble Wrap: How Air Cushioning Works. Also go through the rules.instructions.md after doing the tasks given to you.
+- As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, The Science Behind Bubble Wrap: How Air Cushioning Works. Also go through the rules.instructions.md after doing the tasks given to you.
 
-As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Recycling and Disposal: Responsible Packaging Lifecycle Management. Also go through the rules.instructions.md after doing the tasks given to you.
+- As u have written bubble-wrap-ultimate-guide.html and stretch-film-vs-bubble-wrap.html, add the blogposts as mentioned in the blogs.html. Use blogposts.js and blogposts.css to add the blogposts. The blogposts should be added in a way that they are responsive and look good on all devices. Now add, Recycling and Disposal: Responsible Packaging Lifecycle Management. Also go through the rules.instructions.md after doing the tasks given to you.
 
 Make a sitemap.xml file in the root directory of the website to help search engines understand the structure of the site. Also go through the rules.instructions.md after doing the tasks given to you.
 
 when i click on the chatbot widget in the blogs.html and then click on any category, there appears no blogsposts in the blogs.html then. fix this bug for me. Clicking on a category in the chatbot shouldn't affect the category filter on the blogs.html page. Also go through the rules.instructions.md after doing the tasks given to you.
 
+The deployed url of the blogs page is: https://vardhamanagencies.in/blogs/ and when i click on any blogpost inside it, it takes me to this url: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide and it is giving 404 error, how can i fix this thing? Also go through the rules.instructions.md after doing the tasks given to you.
 
-
-
-
-
+Can't i have the url fo the blogpost like this: https://vardhamanagencies.in/blogs/bubble-wrap-ultimate-guide instead of this: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide. I have deployed the website on hostinger, so tell me what should i do to fix this issue? Also go through the rules.instructions.md after doing the tasks given to you.
 
 
