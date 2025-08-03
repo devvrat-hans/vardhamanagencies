@@ -117,7 +117,7 @@ class BlogPostLoader {
                 tags: ["recycling", "waste-management", "environment"],
                 image: BlogPostLoader.generatePlaceholderImage("sustainability"),
                 readTime: 8,
-                url: "/blogs/packaging-recycling-disposal-guide"
+                url: "/packaging-recycling-disposal-guide"
             }
         ];
         

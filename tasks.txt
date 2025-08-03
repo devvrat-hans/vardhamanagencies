@@ -370,4 +370,6 @@ The deployed url of the blogs page is: https://vardhamanagencies.in/blogs/ and w
 
 Can't i have the url fo the blogpost like this: https://vardhamanagencies.in/blogs/bubble-wrap-ultimate-guide instead of this: https://vardhamanagencies.in/blogs/blogs/bubble-wrap-ultimate-guide. I have deployed the website on hostinger, so tell me what should i do to fix this issue? Also go through the rules.instructions.md after doing the tasks given to you.
 
+Remove the functionality of dynamic generation of blogposts or anything related to that.
+
 
