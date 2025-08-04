@@ -397,3 +397,5 @@ The blogsposts thumbnails are shrinked vertically on the deployed website for al
 In the deployed website, the sidebar css is not applied at all whereas i can see hte css properly applied in the local host. fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
 
 For the sidebar css for the blogposts, mark them as important and of highest priority. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Fix the css of the mail to link which is appearing blue and the background is also blue. Also go through the rules.instructions.md after doing the tasks given to you.
