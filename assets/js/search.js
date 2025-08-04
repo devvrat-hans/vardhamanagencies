@@ -154,7 +154,6 @@ class ProductSearch {
                     </div>
                 `;
                 header.insertAdjacentHTML('beforeend', searchModalHTML);
-                console.log('Search: Added missing search modal to page');
             }
             
             // Also ensure search toggle button exists
@@ -169,7 +168,6 @@ class ProductSearch {
                         </button>
                     `;
                     headerActions.insertAdjacentHTML('afterbegin', searchToggleHTML);
-                    console.log('Search: Added missing search toggle button');
                 }
             }
             
@@ -197,7 +195,6 @@ class ProductSearch {
                 </svg>
             `;
             headerActions.insertBefore(searchButton, headerActions.firstChild);
-            console.log('Search: Added search button to header actions');
         } else if (headerContainer) {
             // Create header actions if they don't exist
             const actionsDiv = document.createElement('div');
@@ -210,7 +207,6 @@ class ProductSearch {
                 </button>
             `;
             headerContainer.appendChild(actionsDiv);
-            console.log('Search: Created header actions with search button');
         } else if (header) {
             // Add a floating search button as last resort
             const searchButton = document.createElement('button');
@@ -248,14 +244,12 @@ class ProductSearch {
             });
             
             document.body.appendChild(searchButton);
-            console.log('Search: Added floating search button');
         }
     }
 
     ensureSearchFunctionality() {
         // Final fallback - ensure search works even if templates fail
         if (!document.getElementById('searchModal')) {
-            console.log('Search: Creating complete search functionality as fallback');
             
             // Create the search modal if it doesn't exist
             if (!document.querySelector('.search-modal')) {
@@ -337,7 +331,6 @@ class ProductSearch {
             this.bindEvents();
             // Initialize with placeholder content
             this.showPlaceholder();
-            console.log('Search: All elements found and initialized successfully');
         } else {
             // Log missing elements for debugging
             const missingElements = Object.entries(elementsFound)
@@ -345,8 +338,6 @@ class ProductSearch {
                 .map(([element]) => element);
             
             if (missingElements.length > 0) {
-                console.warn('Search: Missing elements:', missingElements.join(', '));
-                
                 // Try to add missing elements if possible
                 if (!this.searchToggle) {
                     this.addSearchButtonToPage();

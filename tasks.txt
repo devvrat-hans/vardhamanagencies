@@ -374,8 +374,22 @@
 
 - Also remove the blogposts.js file if not needed. Also go through the rules.instructions.md after doing the tasks given to you.
 
-In blog-packaging-regulations-compliance-india.html, remove the categories and the need for packaging solutions from the section from the sidebar, the icon on the chatbot widget, the footer and the cta is not same as it appears on the other pages of the website like the homepage, make it same. Also go through the rules.instructions.md after doing the tasks given to you.
+- In blog-packaging-regulations-compliance-india.html, remove the categories and the need for packaging solutions from the section from the sidebar, the icon on the chatbot widget, the footer and the cta is not same as it appears on the other pages of the website like the homepage, make it same. Also go through the rules.instructions.md after doing the tasks given to you.
 
-In blog-cost-effective-packaging-strategies.html, remove the categories and the need for packaging solutions from the section from the sidebar, the icon on the chatbot widget, the footer and the cta is not same as it appears on the other pages of the website like the homepage, make it same. Also go through the rules.instructions.md after doing the tasks given to you.
+- In blog-cost-effective-packaging-strategies.html, remove the categories and the need for packaging solutions from the section from the sidebar, the icon on the chatbot widget, the footer and the cta is not same as it appears on the other pages of the website like the homepage, make it same. Also go through the rules.instructions.md after doing the tasks given to you.
 
-check the realted
+- In the deployed website, the sidebar is not looking good at all, remove the sidebar and its related code and then add it again to all the three blogposts that we have. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- in the first blogposts, blog-bubble-wrap-ultimate-guide.html, the related posts and the need Need Expert Guidance? sections are not coming in the sidebar as we have for otehr blogposts, fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Now everything is white in the need expert guidance section in the sidebar of the blogposts. It is not looking good at all, fix this for me. The need expert guidance section should have a good background and the content should be properly aligned. The need expert guidance section should look good and professional. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Improve the css of need expert Guidance section in the sidebar of the blogposts. The css should be improved in a way that it looks good and professional. The need expert guidance section should have a good background and the content should be properly aligned. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- remove the unwanted pieces of code from .htaccess file. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- remove debugging console logs from the codebase. The console logs should not be present in the final codebase. Also go through the rules.instructions.md after doing the tasks given to you.
+
+- Maintain consistancy across all blogposts in terms of layout, sidebar content, and overall design. Ensure that the sidebar includes the same sections like "Related Posts" and "Need Expert Guidance?" across all blogposts. There should be no other sections on the sidebar. Files to look for: blog-bubble-wrap-ultimate-guide.html, blog-packaging-regulations-compliance-india.html, blog-cost-effective-packaging-strategies.html. Also go through the rules.instructions.md after doing the tasks given to you.
+
+The blogsposts thumbnails are shrinked vertically on the deployed website for all the blogposts, fix this thing for me. The blogsposts thumbnails should be properly sized and not shrinked vertically. Also go through the rules.instructions.md after doing the tasks given to you.

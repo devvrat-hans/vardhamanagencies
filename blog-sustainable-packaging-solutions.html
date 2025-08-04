@@ -305,22 +305,26 @@
 
                     <!-- Sidebar -->
                     <aside class="blog-sidebar">
-                        <div class="sidebar-widget">
-                            <h3>Related Posts</h3>
-                            <div class="related-posts">
+                        <!-- Related Posts Widget -->
+                        <div class="sidebar-widget related-posts">
+                            <h3>Related Articles</h3>
+                            <div class="related-posts-list">
                                 <article class="related-post">
                                     <div class="related-post__image">
                                         <div class="blog-card__placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                                             <div class="blog-card__icon">
-                                                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                                <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
                                                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                                                 </svg>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="related-post__content">
+                                        <span class="related-post__category">Product Guides</span>
                                         <h4><a href="blog-bubble-wrap-ultimate-guide.html">The Ultimate Guide to Bubble Wrap</a></h4>
-                                        <span class="related-post__date">July 20, 2025</span>
+                                        <div class="related-post__meta">
+                                            <time>July 20, 2025</time>
+                                        </div>
                                     </div>
                                 </article>
 
@@ -328,25 +332,52 @@
                                     <div class="related-post__image">
                                         <div class="blog-card__placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                                             <div class="blog-card__icon">
-                                                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                                <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
                                                     <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19v2h-1.5v17h-15V4H1V2h3.5C5.33 2 6 2.67 6 3.5V4h12v-.5c0-.83.67-1.5 1.5-1.5z"/>
                                                 </svg>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="related-post__content">
+                                        <span class="related-post__category">Product Guides</span>
                                         <h4><a href="blog-stretch-film-vs-bubble-wrap.html">Stretch Film vs Bubble Wrap</a></h4>
-                                        <span class="related-post__date">July 12, 2025</span>
+                                        <div class="related-post__meta">
+                                            <time>July 12, 2025</time>
+                                        </div>
                                     </div>
                                 </article>
                             </div>
                         </div>
 
-                        <div class="sidebar-widget">
-                            <h3>Contact Our Experts</h3>
-                            <div class="contact-info">
+                        <!-- Expert Guidance Widget -->
+                        <div class="sidebar-widget expert-guidance">
+                            <h3>Need Expert Guidance?</h3>
+                            <div class="expert-guidance__content">
                                 <p>Interested in sustainable packaging solutions for your business? Our experts can help you make the transition.</p>
-                                <a href="contact.html" class="btn btn--primary">Get Green Solutions</a>
+                                <div class="expert-guidance__features">
+                                    <div class="feature">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                        </svg>
+                                        <span>Free Consultation</span>
+                                    </div>
+                                    <div class="feature">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                        </svg>
+                                        <span>Custom Solutions</span>
+                                    </div>
+                                    <div class="feature">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                        </svg>
+                                        <span>Quick Response</span>
+                                    </div>
+                                </div>
+                                <div class="expert-guidance__actions">
+                                    <a href="contact.html" class="btn btn--primary">Get Green Solutions</a>
+                                    <a href="tel:08043864029" class="btn btn--outline">Call Now</a>
+                                </div>
                             </div>
                         </div>
                     </aside>
@@ -476,7 +507,7 @@
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                             </svg>
-                            info@vardhamanagencies.in
+                            <a href="mailto:info@vardhamanagencies.in">info@vardhamanagencies.in</a>
                         </p>
                         <p>
                             <svg viewBox="0 0 24 24" fill="currentColor">
