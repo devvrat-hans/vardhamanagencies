@@ -393,3 +393,7 @@
 - Maintain consistancy across all blogposts in terms of layout, sidebar content, and overall design. Ensure that the sidebar includes the same sections like "Related Posts" and "Need Expert Guidance?" across all blogposts. There should be no other sections on the sidebar. Files to look for: blog-bubble-wrap-ultimate-guide.html, blog-packaging-regulations-compliance-india.html, blog-cost-effective-packaging-strategies.html. Also go through the rules.instructions.md after doing the tasks given to you.
 
 The blogsposts thumbnails are shrinked vertically on the deployed website for all the blogposts, fix this thing for me. The blogsposts thumbnails should be properly sized and not shrinked vertically. Also go through the rules.instructions.md after doing the tasks given to you.
+
+In the deployed website, the sidebar css is not applied at all whereas i can see hte css properly applied in the local host. fix this thing for me. Also go through the rules.instructions.md after doing the tasks given to you.
+
+For the sidebar css for the blogposts, mark them as important and of highest priority. Also go through the rules.instructions.md after doing the tasks given to you.

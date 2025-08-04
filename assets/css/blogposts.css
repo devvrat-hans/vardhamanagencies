@@ -1,3 +1,50 @@
+/* ===============================================
+   CRITICAL SIDEBAR STYLES - HIGHEST PRIORITY
+   DO NOT REMOVE !important DECLARATIONS
+   =============================================== */
+
+/* Force sidebar visibility and layout */
+.blog-post-page .blog-sidebar,
+.blog-sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--spacing-xl) !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    flex-shrink: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Force sidebar widget styling */
+.blog-post-page .sidebar-widget,
+.sidebar-widget {
+    background: white !important;
+    border-radius: var(--border-radius-lg) !important;
+    padding: var(--spacing-xl) !important;
+    box-shadow: var(--shadow-md) !important;
+    border: 1px solid var(--border-color) !important;
+    margin-bottom: var(--spacing-lg) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Force expert guidance widget styling */
+.blog-post-page .sidebar-widget.expert-guidance,
+.sidebar-widget.expert-guidance {
+    background: linear-gradient(135deg, #004BB8 0%, #003a91 100%) !important;
+    color: white !important;
+    border: none !important;
+    min-height: 200px !important;
+}
+
+/* ===============================================
+   END CRITICAL SIDEBAR STYLES
+   =============================================== */
+
 /* Blog Post Card Styles */
 .blog-card {
     background: white;
@@ -130,19 +177,22 @@
     background: white;
 }
 
+/* HIGHEST PRIORITY BLOG POST LAYOUT - DO NOT REMOVE !important */
 .blog-post-layout {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: var(--spacing-3xl);
-    max-width: 1200px;
-    margin: 0 auto;
+    display: grid !important;
+    grid-template-columns: 1fr 350px !important;
+    gap: var(--spacing-3xl) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    align-items: start !important;
 }
 
 .blog-post-main {
-    background: white;
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-2xl);
-    box-shadow: var(--shadow-md);
+    background: white !important;
+    border-radius: var(--border-radius-lg) !important;
+    padding: var(--spacing-2xl) !important;
+    box-shadow: var(--shadow-md) !important;
+    width: 100% !important;
 }
 
 .featured-image {
@@ -241,10 +291,14 @@
     border-color: var(--primary-color);
 }
 
+/* HIGHEST PRIORITY SIDEBAR STYLES - DO NOT REMOVE !important */
 .blog-sidebar {
     display: flex !important;
     flex-direction: column !important;
     gap: var(--spacing-xl) !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    flex-shrink: 0 !important;
 }
 
 .sidebar-widget {
@@ -253,6 +307,9 @@
     padding: var(--spacing-xl) !important;
     box-shadow: var(--shadow-md) !important;
     border: 1px solid var(--border-color) !important;
+    margin-bottom: var(--spacing-lg) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .sidebar-widget h3 {
@@ -262,18 +319,22 @@
     margin-bottom: var(--spacing-lg) !important;
     padding-bottom: var(--spacing-md) !important;
     border-bottom: 2px solid var(--border-color) !important;
+    margin-top: 0 !important;
 }
 
+/* HIGHEST PRIORITY RELATED POSTS STYLES - DO NOT REMOVE !important */
 .related-posts {
     display: flex !important;
     flex-direction: column !important;
     gap: var(--spacing-md) !important;
+    width: 100% !important;
 }
 
 .related-posts-list {
     display: flex !important;
     flex-direction: column !important;
     gap: var(--spacing-md) !important;
+    width: 100% !important;
 }
 
 .related-post {
@@ -286,6 +347,8 @@
     border: 1px solid var(--border-light) !important;
     background: white !important;
     text-decoration: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .related-post:hover {
@@ -305,6 +368,7 @@
 
 .related-post__content {
     flex: 1 !important;
+    width: 100% !important;
 }
 
 .related-post__category {
@@ -323,6 +387,7 @@
     color: var(--text-primary) !important;
     margin-bottom: var(--spacing-xs) !important;
     line-height: 1.4 !important;
+    margin-top: 0 !important;
 }
 
 .related-post__content h4 a {
@@ -354,7 +419,7 @@
     padding: var(--spacing-xl) !important;
 }
 
-/* Expert Guidance Widget Styles - Enhanced Specificity with Fallback */
+/* HIGHEST PRIORITY EXPERT GUIDANCE WIDGET STYLES - DO NOT REMOVE !important */
 .blog-post-page .blog-sidebar .sidebar-widget.expert-guidance,
 .sidebar-widget.expert-guidance {
     background: #004BB8 !important; /* Fallback solid color */
@@ -367,19 +432,22 @@
     /* Add important styles to ensure visibility */
     min-height: 200px !important;
     padding: var(--spacing-xl) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: var(--spacing-lg) !important;
 }
 
 .blog-post-page .blog-sidebar .sidebar-widget.expert-guidance::before,
 .sidebar-widget.expert-guidance::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 1;
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    right: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
 }
 
 .blog-post-page .blog-sidebar .sidebar-widget.expert-guidance h3,
@@ -391,6 +459,9 @@
     position: relative !important;
     z-index: 2 !important;
     background: none !important;
+    margin-top: 0 !important;
+    margin-bottom: var(--spacing-lg) !important;
+    padding-bottom: var(--spacing-md) !important;
 }
 
 .blog-post-page .blog-sidebar .expert-guidance__content,
@@ -398,6 +469,7 @@
     position: relative !important;
     z-index: 2 !important;
     background: none !important;
+    width: 100% !important;
 }
 
 .blog-post-page .blog-sidebar .expert-guidance__content p,
@@ -408,6 +480,7 @@
     text-align: center !important;
     margin-bottom: var(--spacing-lg) !important;
     background: none !important;
+    margin-top: 0 !important;
 }
 
 .blog-post-page .blog-sidebar .expert-guidance__features,
@@ -417,6 +490,7 @@
     gap: var(--spacing-sm) !important;
     margin-bottom: var(--spacing-xl) !important;
     background: none !important;
+    width: 100% !important;
 }
 
 .blog-post-page .blog-sidebar .expert-guidance__features .feature,
@@ -429,6 +503,7 @@
     font-size: 0.9rem !important;
     font-weight: 500 !important;
     background: none !important;
+    width: 100% !important;
 }
 
 .blog-post-page .blog-sidebar .expert-guidance__features .feature svg,
@@ -448,6 +523,7 @@
     flex-direction: column !important;
     gap: var(--spacing-md) !important;
     background: none !important;
+    width: 100% !important;
 }
 
 .blog-post-page .blog-sidebar .expert-guidance__actions .btn,
@@ -463,6 +539,8 @@
     position: relative !important;
     overflow: hidden !important;
     display: inline-block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .blog-post-page .blog-sidebar .expert-guidance__actions .btn::before,
@@ -635,15 +713,21 @@
     margin-bottom: var(--spacing-md);
 }
 
-/* Responsive Design for Blog Posts */
+/* HIGHEST PRIORITY RESPONSIVE DESIGN FOR BLOG POSTS - DO NOT REMOVE !important */
 @media (max-width: 968px) {
     .blog-post-layout {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-xl) !important;
     }
     
     .blog-sidebar {
-        order: -1;
+        order: -1 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .sidebar-widget {
+        margin-bottom: var(--spacing-lg) !important;
     }
 }
 
