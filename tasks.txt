@@ -399,3 +399,7 @@ In the deployed website, the sidebar css is not applied at all whereas i can see
 For the sidebar css for the blogposts, mark them as important and of highest priority. Also go through the rules.instructions.md after doing the tasks given to you.
 
 Fix the css of the mail to link which is appearing blue and the background is also blue. Also go through the rules.instructions.md after doing the tasks given to you.
+
+The footer links appear differently on the refund policy and the privacy policy page as compared to rest of the website. Make the footer links on the refund and privacy policy page as they appear on the terms and conditions page. Also go through the rules.instructions.md after doing the tasks given to you.
+
+Can we change just the color of this thing? Your privacy is important to us. This policy explains how Vardhaman Agencies collects, uses, and protects your personal information when you use our packaging solutions and services. Also go through the rules.instructions.md after doing the tasks given to you.
