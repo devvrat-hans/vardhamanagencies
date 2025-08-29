@@ -270,7 +270,7 @@
 }
 
 .contact-info a {
-    color: var(--primary-color);
+    color: #004BB8 !important;
     text-decoration: none;
 }
 
