@@ -421,7 +421,7 @@ class Chatbot {
                     <h4>📞 Contact Us</h4>
                     <p><strong>Phone:</strong> +91 98765 43210</p>
                     <p><strong>Email:</strong> <a href="mailto:info@vardhamanagencies.com" style="color: #004BB8 !important; text-decoration: none;">info@vardhamanagencies.com</a></p>
-                    <p><strong>Website:</strong> <a href="/contact.html">Contact Form</a></p>
+                    <p><strong>Website:</strong> <a href="/contact.html">Contact Us</a></p>
                     <p>We're here to help with all your packaging needs!</p>
                 </div>
             </div>
